@@ -9,6 +9,7 @@ Add yourself as a contributor to this project as a Markdown link that links your
 - [Katia Utochkina](https://github.com/katia-utochkina) 🌸
 - [Jessica Woudsma](https://github.com/jssckbl) 🦅
 - [Megan McKissack](https://github.com/meganmckissack)📼
+- [Alejandro Coca](https://github.com/alxmcr) 😄
 
 ## Mentors
 
