@@ -16,4 +16,6 @@ Add yourself as a contributor to this project as a Markdown link that links your
 - [Andrew Hedges](https://github.com/segdeha) 🦔
 - [Lauren Beatty](https://github.com/laurenmbeatty) 👩‍🎤
 
-## Code of Conduct Contacts
+## Code of Conduct Contact
+
+- [Stacie Taylor](https://github.com/stacietaylorcima) ✨
