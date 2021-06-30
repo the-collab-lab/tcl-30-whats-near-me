@@ -6,7 +6,7 @@ Add yourself as a contributor to this project as a Markdown link that links your
 
 ## Cohort Participants
 
-- [Katia Utochkina](https://github.com/katia-utochkina) ✨
+- [Katia Utochkina](https://github.com/katia-utochkina) 👻
 - [Jessica Woudsma](https://github.com/jssckbl) 🦅
 - [Megan McKissack](https://github.com/meganmckissack)📼
 - [Alejandro Coca](https://github.com/alxmcr) 😄
