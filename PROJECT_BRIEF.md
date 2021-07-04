@@ -12,7 +12,7 @@ This project is based on [whats-near.me](https://whats-near.me), a mobile web ap
 
 ### Locations for things
 
-- Site: [Production Site](https://tcl-30-whats-near-me.web.app/)
+- Site: [Production Site](https://tcl-30-whats-near-me-d2e34.web.app/)
 - Repo: [Repository](https://github.com/the-collab-lab/tcl-30-whats-near-me)
 - Clone URL: `https://github.com/the-collab-lab/tcl-30-whats-near-me.git`
 - Issue list: [Jira Board](https://tinyurl.com/tcl30jira)
@@ -150,8 +150,8 @@ When you and your pair partner have working code that you believe is ready to be
 2. Notify the other pair team in Slack that you have a new PR for them to review
 3. Incorporate feedback from the other pair team into your work until both you and they are satisfied the code is ready to be merged
 4. Request that Andrew or one of the mentors review the PR for final approval
-5. Once approved, merge the PR into `main` (your code will be built and deployed to production automatically thanks to [Netlify](https://www.netlify.com/))
-6. Check your work on the [production site](https://tcl-30-whats-near-me.web.app/)
+5. Once approved, merge the PR into `main` (your code will be built and deployed to production automatically thanks to [Firebase Hosting](https://console.firebase.google.com/u/0/project/tcl-30-whats-near-me-d2e34/overview))
+6. Check your work on the [production site](https://tcl-30-whats-near-me-d2e34.web.app/)
 7. Celebrate! 🥳
 
 ### What else?
