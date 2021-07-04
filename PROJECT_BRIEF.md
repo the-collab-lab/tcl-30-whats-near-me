@@ -26,45 +26,45 @@ Each week, the team of 4 developers will split into 2 pairs of 2 developers each
 
 Pairings will go as follows:
 
-#### Week 1, {DATES_WEEK_1}
+#### Week 1, July 10 - 16
 
-1. {DEV_1} & {DEV_2}
-2. {DEV_3} & {DEV_4}
+1. Megan & Jessica
+2. Alejandro & Katia
 
-#### Week 2, {DATES_WEEK_2}
+#### Week 2, July 17 - 23
 
-1. {DEV_2} & {DEV_3}
-2. {DEV_1} & {DEV_4}
+1. Katia & Megan
+2. Jessica & Alejandro
 
-#### Week 3, {DATES_WEEK_3}
+#### Week 3, July 24 - 30
 
-1. {DEV_3} & {DEV_1}
-2. {DEV_4} & {DEV_2}
+1. Alejandro & Megan
+2. Jessica & Katia
 
-#### Week 4, {DATES_WEEK_4}
+#### Week 4, July 31 - August 6
 
-1. {DEV_1} & {DEV_2}
-2. {DEV_3} & {DEV_4}
+1. Megan & Jessica
+2. Alejandro & Katia
 
-#### Week 5, {DATES_WEEK_5}
+#### Week 5, August 7 - 13
 
-1. {DEV_2} & {DEV_3}
-2. {DEV_1} & {DEV_4}
+1. Katia & Megan
+2. Jessica & Alejandro
 
-#### Week 6, {DATES_WEEK_6}
+#### Week 6, August 14 - 20
 
-1. {DEV_3} & {DEV_1}
-2. {DEV_4} & {DEV_2}
+1. Alejandro & Megan
+2. Jessica & Katia
 
-#### Week 7, {DATES_WEEK_7}
+#### Week 7, August 21 - 27
 
-1. {DEV_1} & {DEV_2}
-2. {DEV_3} & {DEV_4}
+1. Megan & Jessica
+2. Alejandro & Katia
 
-#### Week 8, {DATES_WEEK_8}
+#### Week 8, August 28 - September 3
 
-1. {DEV_2} & {DEV_3}
-2. {DEV_1} & {DEV_4}
+1. Katia & Megan
+2. Jessica & Alejandro
 
 ### Pair Programming
 
