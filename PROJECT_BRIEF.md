@@ -6,7 +6,7 @@
 
 The goal of the project is to build a mobile web app that shows you [nearby Wikipedia entries](https://thenextweb.com/media/2013/05/29/wikipedia-surfaces-articles-based-on-your-location-and-wants-you-to-add-photos-with-your-mobile-phone/).
 
-This project is based on [whats-near.me](https://whats-near.me), a mobile web app I recently built for my own use. You’re welcome to look at the [GitHub repo for that site](https://github.com/segdeha/whats-near.me) if you get stuck and want a hint!
+This project is based on [whats-near.me](https://whats-near.me), a mobile web app Andrew built for my own use. You’re welcome to look at the [GitHub repo for that site](https://github.com/segdeha/whats-near.me) if you get stuck and want a hint!
 
 ![Screenshots from whats-near.me](https://raw.githubusercontent.com/the-collab-lab/tcl-pilot-2020-05/master/screenshots.png)
 
@@ -68,11 +68,11 @@ Pairings will go as follows:
 
 ### Pair Programming
 
-A portion of your dedicated hours each week will be spent [pair programming](https://www.freecodecamp.org/news/how-remote-pair-programming-works-and-why-it-can-change-your-life-cd7b767dc60f/) with your partner—this is where the most magical collaboration happens.
+A portion of your dedicated hours each week will be spent [pair programming](https://www.freecodecamp.org/news/how-remote-pair-programming-works-and-why-it-can-change-your-life-cd7b767dc60f/) with your partner—this is where the most magical collaboration happens!
 
 Pair programming offers some really exciting opportunities to teach/learn from your partner, get a different perspective and/or insight on the issues you’re facing, and drive forward progress on your goals.
 
-There is no one “right” way to pair program, but in general, you will meet with your partner on Zoom to work through the story or task you’ve chosen for that week. You’re encouraged to test out some different approaches to pair programming to see what works best for your and your partner’s collaboration styles.
+There is no one “right” way to pair program, but in general, you will meet with your partner on a video call to work through the story or task you’ve chosen for that week. You’re encouraged to test out some different approaches to pair programming to see what works best for your and your partner’s collaboration styles.
 
 ### Weekly Sync
 
@@ -98,13 +98,15 @@ Our retro format will change each week. Watch the team channel for more details!
 
 A week sounds like a long time in some ways, but part of working on a team is accounting for coordination costs. Let’s walk back our goal of demoing from the production URL on Sundays to see when different things need to happen.
 
-- Sunday — Demo on production!
-- Saturday — Respond to mentor feedback on PRs
-- Friday — Respond to/give peer feedback on PRs and ping mentors for feedback
-- Thursday — Complete story and ask for peer feedback
-- Monday, Tuesday, Wednesday — Work out approach, research if needed, pair program
+- Saturday — Demo on production!
+- Friday — Respond to mentor feedback on PRs
+- Thursday — Respond to/give peer feedback on PRs and ping mentors for feedback
+- Wednesday — Complete story and ask for peer feedback
+- Sunday, Monday, Tuesday — Work out approach, research if needed, pair program
 
 Having watched many cohorts before yours, our advice is to front-load the work as much as possible in the first couple of days of each week. Some of the stories are trickier than they appear on the surface!
+
+Additionally, the stories in this project are not all scoped to take exactly one week. It is expected that if you wrap up early and have time to get started on the next story on the board that you will pick it up and keep the project moving. Likewise, it is highly likely that some stories will take more than a single week to complete!
 
 ### How to know what to do
 
@@ -127,6 +129,10 @@ You are strongly encouraged to create a [draft PR](https://help.github.com/en/gi
 
 You can also ask for clarification about stories directly on the issues themselves in Jira.
 
+Additionally, we encouragae you to “work in the open” as much as possible. This can take the form of discussing ideas, progress, and blockers in a pairing thread in Slack. Our channel has a Slack workflow enabled to facilitate this (screenshot below).
+
+![Click the workflow icon then click “Create a story thread”](https://cdn.zappy.app/89a1cb97ee68ec395d3f9a71a2e524c7.jpg)
+
 ### Development process
 
 Work will be done on feature branches in git. Branches should be named in the following way:
@@ -137,7 +143,7 @@ For example:
 
     st-an-render-map
 
-The hypothetical example above has Stacie Taylor and Alejandro Ñáñez working together to get a map to render. Each of them will be able to work on the feature branch independently, but only one of them will submit the merge request when the work is ready (described in more detail below).
+The hypothetical example above has Stacie Taylor and Alejandro Ñáñez working together to get a map to render. Each of them will be able to work on the feature branch independently, but only one of them will submit the pull request (PR) when the work is ready (described in more detail below).
 
 When you’re ready to start work on a feature, one person in your pair should create a local branch following the naming convention above, then push the branch to GitHub so your pair buddy can pull it down to their local environment. The following steps should work to do just this:
 
@@ -146,15 +152,17 @@ When you’re ready to start work on a feature, one person in your pair should c
 
 When you and your pair partner have working code that you believe is ready to be merged to `main` and deployed, you will follow the following steps:
 
-1. Create a [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) (PR) describing the work done, the before and after states, and how to validate that the changes work as intended
-2. Notify the other pair team in Slack that you have a new PR for them to review
+1. Create a [PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) describing the work done, the before and after states, and how to validate that the changes work as intended
+2. Notify the other pair team by `@mentioning` them in Slack to let them know you have a new PR for them to review
 3. Incorporate feedback from the other pair team into your work until both you and they are satisfied the code is ready to be merged
-4. Request that Andrew or one of the mentors review the PR for final approval
+4. Request that Andrew or Lauren review the PR for final approval
 5. Once approved, merge the PR into `main` (your code will be built and deployed to production automatically thanks to [Firebase Hosting](https://console.firebase.google.com/u/0/project/tcl-30-whats-near-me-d2e34/overview))
 6. Check your work on the [production site](https://tcl-30-whats-near-me-d2e34.web.app/)
 7. Celebrate! 🥳
 
 ### What else?
+
+There are both similarities and differences between how we will run this project and how your previous Collab Lab projects were run. We will talk those through in our first weekly sync. Between now and then, please ask any questions you have in [our team channel](https://the-collab-lab.slack.com/archives/C023UVBJXQ9)!
 
 I’m around 💯% sure I’m forgetting or glossing over something important, so please be noisy on Slack as things come up. The mentors and I will do our best to get you un-stuck. Also, lean on each other for help as well! Finally, work in the open so everyone can benefit from your questions.
 
