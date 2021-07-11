@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "map-marked-alt-solid.svg",
-      "type": "image/svg",
+      "src": "map-marked-alt-solid.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "map-marked-alt-solid.svg",
-      "type": "image/svg",
+      "src": "map-marked-alt-solid.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
