@@ -13,7 +13,7 @@ const Map = () => {
   };
 
   return (
-    <div className="map">
+    <div>
       <h1>What's Near Me?</h1>
       <div className="google-map">
         <GoogleMapReact
