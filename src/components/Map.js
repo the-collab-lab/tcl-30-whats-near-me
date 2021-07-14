@@ -13,9 +13,9 @@ const Map = () => {
   };
 
   return (
-    <div>
+    <div className="map-area">
       <h1>What's Near Me?</h1>
-      <div className="google-map">
+      <div className="map">
         <GoogleMapReact
           bootstrapURLKeys={{ key }}
           defaultCenter={center}
