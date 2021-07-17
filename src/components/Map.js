@@ -13,16 +13,18 @@ const Map = () => {
   };
 
   return (
-    <div className="map-area">
+    <>
       <h1>What's Near Me?</h1>
       <div className="map">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key }}
-          defaultCenter={center}
-          defaultZoom={zoom}
-        />
+        <div className="map__inner">
+          <GoogleMapReact
+            bootstrapURLKeys={{ key }}
+            defaultCenter={center}
+            defaultZoom={zoom}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
