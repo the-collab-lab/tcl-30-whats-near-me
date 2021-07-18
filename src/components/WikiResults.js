@@ -27,8 +27,6 @@ const WikiResults = () => {
         );
 
         if (!res.ok) {
-          setError(error);
-          setStatus('error');
           throw new Error(res.status);
         }
 
@@ -53,15 +51,7 @@ const WikiResults = () => {
     return <ErrorMessage />;
   }
 
-  return isSuccess ? <Map data={data} /> : <ErrorMessage />;
+  return isSuccess ? <Map data={data} /> : null;
 };
 
 export default WikiResults;
-
-// return isSuccess ? (
-//   data && data.query ? (
-//     <Map data={data} />
-//   ) : (
-//     <ErrorMessage />
-//   )
-// ) : null;
