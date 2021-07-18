@@ -14,8 +14,7 @@ const WikiResults = () => {
   const isSuccess = status === 'success';
   const isError = status === 'error';
 
-  //const { lat, lng } = { lat: 48.8566, lng: 2.3522 };
-  const { lat, lng } = { lat: 14.5994, lng: 28.6731 };
+  const { lat, lng } = { lat: 48.8566, lng: 2.3522 };
 
   useEffect(() => {
     if (!(lat, lng)) return;
@@ -54,13 +53,15 @@ const WikiResults = () => {
     return <ErrorMessage />;
   }
 
-  return isSuccess ? (
-    data && data.query ? (
-      <Map data={data} />
-    ) : (
-      <ErrorMessage />
-    )
-  ) : null;
+  return isSuccess ? <Map data={data} /> : <ErrorMessage />;
 };
 
 export default WikiResults;
+
+// return isSuccess ? (
+//   data && data.query ? (
+//     <Map data={data} />
+//   ) : (
+//     <ErrorMessage />
+//   )
+// ) : null;
