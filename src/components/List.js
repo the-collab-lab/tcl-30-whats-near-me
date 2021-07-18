@@ -4,6 +4,8 @@ import Page from './Page';
 
 const List = () => {
   const centerMap = {
+    // lat: 0,
+    // lng: 0,
     lat: 48.8566,
     lng: 2.3522,
   };
