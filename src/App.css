@@ -164,3 +164,7 @@ a.active {
   height: 30px;
   animation: donut-spin 1.2s linear infinite;
 }
+
+.search__error__title {
+  text-align: center;
+}

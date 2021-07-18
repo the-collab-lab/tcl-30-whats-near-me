@@ -14,7 +14,8 @@ const WikiResults = () => {
   const isSuccess = status === 'success';
   const isError = status === 'error';
 
-  const { lat, lng } = { lat: 48.8566, lng: 2.3522 };
+  //const { lat, lng } = { lat: 48.8566, lng: 2.3522 };
+  const { lat, lng } = { lat: 14.5994, lng: 28.6731 };
 
   useEffect(() => {
     if (!(lat, lng)) return;
