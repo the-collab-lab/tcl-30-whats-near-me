@@ -43,7 +43,7 @@ const WikiResults = () => {
       }
     };
     getWikiEntries(lat, lng);
-  }, []);
+  }, [error, lat, lng]);
 
   if (isLoading) {
     return <Spinner />;

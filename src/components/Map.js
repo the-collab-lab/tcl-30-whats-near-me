@@ -4,7 +4,6 @@ import GoogleMapReact from 'google-map-react';
 
 const Map = ({ data }) => {
   const { centerCoords, zoom } = data;
-  console.log('data', data);
   return (
     <>
       <h1>What's Near Me?</h1>
