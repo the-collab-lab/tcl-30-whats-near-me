@@ -44,11 +44,15 @@ const WikiResults = () => {
   }, [error, lat, lng]);
 
   if (isLoading) {
-    return <Spinner />;
+    return (
+      <div className="spinner-container">
+        <Spinner />
+      </div>
+    );
   }
 
   if (isError) {
-    return <ErrorMessage />;
+    return <ErrorMessage error={error} />;
   }
 
   return isSuccess ? <Map data={data} /> : null;
