@@ -31,8 +31,7 @@ const WikiResults = () => {
         }
 
         const data = await res.json();
-        setData({ ...data, centerCoords: { lat, lng }, zoom: 11 });
-
+        setData({ ...data, centerCoords: { lat, lng }, zoom: 16 });
         setStatus('success');
       } catch (error) {
         console.error(error);
@@ -44,11 +43,15 @@ const WikiResults = () => {
   }, [error, lat, lng]);
 
   if (isLoading) {
-    return <Spinner />;
+    return (
+      <div id="spinner-container">
+        <Spinner />
+      </div>
+    );
   }
 
   if (isError) {
-    return <ErrorMessage />;
+    return <ErrorMessage error={error} />;
   }
 
   return isSuccess ? <Map data={data} /> : null;
