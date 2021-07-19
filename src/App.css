@@ -146,7 +146,7 @@ a.active {
   text-decoration: underline;
 }
 
-#spinner-container {
+.spinner-container {
   display: flex;
   flex-direction: column;
   align-items: center;
