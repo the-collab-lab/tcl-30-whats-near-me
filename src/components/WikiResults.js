@@ -43,11 +43,7 @@ const WikiResults = () => {
   }, [error, lat, lng]);
 
   if (isLoading) {
-    return (
-      <div id="spinner-container">
-        <Spinner />
-      </div>
-    );
+    return <Spinner />;
   }
 
   if (isError) {
