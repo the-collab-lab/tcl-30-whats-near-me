@@ -133,3 +133,27 @@ nav {
 a.active {
   text-decoration: underline;
 }
+
+.page {
+  align-items: center;
+  border-bottom: 1px solid #1c2334;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.page__title {
+  font-size: 1.125rem;
+}
+
+.page__image {
+  height: 3.38rem;
+  object-fit: cover;
+  width: 3.38rem;
+}
+
+.page__image--icon {
+  font-size: 3.38rem;
+}
