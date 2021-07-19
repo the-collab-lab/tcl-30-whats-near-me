@@ -19,7 +19,7 @@ const Map = ({ data }) => {
           anchor: new maps.Point(0, 24),
         };
 
-        const marker = new maps.Marker({
+        new maps.Marker({
           map,
           position: { lat: coordinates[0].lat, lng: coordinates[0].lon },
           animation: maps.Animation.DROP,
