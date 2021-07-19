@@ -2,10 +2,33 @@ import React from 'react';
 
 import GoogleMapReact from 'google-map-react';
 
-import Pin from './Pin';
-
 const Map = ({ data }) => {
   const { centerCoords, zoom } = data;
+
+  const handleApiLoaded = (map, maps, data) => {
+    if (data && data.query.pages.length > 0) {
+      data.query.pages.forEach((location) => {
+        const { coordinates, pageid: id } = location;
+
+        const image = {
+          url:
+            location.thumbnail?.source ||
+            `${process.env.PUBLIC_URL}/placeholder.png`,
+          size: new maps.Size(24, 24),
+          origin: new maps.Point(0, 0),
+          anchor: new maps.Point(0, 24),
+        };
+
+        const marker = new maps.Marker({
+          map,
+          position: { lat: coordinates[0].lat, lng: coordinates[0].lon },
+          animation: maps.Animation.DROP,
+          icon: image,
+          id,
+        });
+      });
+    }
+  };
 
   return (
     <>
@@ -18,25 +41,11 @@ const Map = ({ data }) => {
             }}
             defaultCenter={centerCoords}
             defaultZoom={zoom}
-          >
-            {data && data.query.pages.length > 0
-              ? data.query.pages.map((location) => {
-                  const { coordinates, pageid: id } = location;
-                  return (
-                    <Pin
-                      key={id}
-                      lat={coordinates[0].lat}
-                      lng={coordinates[0].lon}
-                      imageUrl={
-                        location?.thumbnail?.source ||
-                        `${process.env.PUBLIC_URL}/map-icon.png`
-                      }
-                      title={Location.title}
-                    />
-                  );
-                })
-              : null}
-          </GoogleMapReact>
+            yesIWantToUseGoogleMapApiInternals={true}
+            onGoogleApiLoaded={({ map, maps }) =>
+              handleApiLoaded(map, maps, data)
+            }
+          ></GoogleMapReact>
         </div>
       </div>
     </>
