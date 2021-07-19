@@ -11,7 +11,6 @@ const List = () => {
   };
   const { pages, loading } = usePages(centerMap);
 
-  console.log(pages);
   return (
     <div>
       <h1>List</h1>
