@@ -47,6 +47,21 @@ textarea {
   font: inherit;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  ::after,
+  ::before {
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /*--------------------------------------------------------------------------*\
    
 \*--------------------------------------------------------------------------*/
