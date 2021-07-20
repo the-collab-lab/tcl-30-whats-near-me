@@ -14,7 +14,7 @@ const Map = ({ data }) => {
           url:
             location.thumbnail?.source ||
             `${process.env.PUBLIC_URL}/placeholder.png`,
-          size: new maps.Size(24, 24),
+          scaledSize: new maps.Size(24, 24),
           origin: new maps.Point(0, 0),
           anchor: new maps.Point(0, 24),
         };
