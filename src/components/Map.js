@@ -1,33 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import GoogleMapReact from 'google-map-react';
 
+import Pin from './Pin';
+
 const Map = ({ data }) => {
+  const [loaded, setLoaded] = useState(false);
+
   const { centerCoords, zoom } = data;
 
-  const handleApiLoaded = (map, maps, data) => {
-    if (data && data.query.pages.length > 0) {
-      data.query.pages.forEach((location) => {
-        const { coordinates, pageid: id } = location;
-
-        const image = {
-          url:
-            location.thumbnail?.source ||
-            `${process.env.PUBLIC_URL}/placeholder.png`,
-          scaledSize: new maps.Size(24, 24),
-          origin: new maps.Point(0, 0),
-          anchor: new maps.Point(0, 24),
-        };
-
-        new maps.Marker({
-          map,
-          position: { lat: coordinates[0].lat, lng: coordinates[0].lon },
-          animation: maps.Animation.DROP,
-          icon: image,
-          id,
-        });
-      });
-    }
+  const handleApiLoaded = (map, maps) => {
+    setLoaded(true);
+    console.log(map, maps);
   };
 
   return (
@@ -42,10 +26,26 @@ const Map = ({ data }) => {
             defaultCenter={centerCoords}
             defaultZoom={zoom}
             yesIWantToUseGoogleMapApiInternals={true}
-            onGoogleApiLoaded={({ map, maps }) =>
-              handleApiLoaded(map, maps, data)
-            }
-          ></GoogleMapReact>
+            onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+          >
+            {data && data.query.pages.length > 0 && loaded
+              ? data.query.pages.map((location) => {
+                  const { coordinates, pageid: id } = location;
+                  return (
+                    <Pin
+                      key={id}
+                      lat={coordinates[0].lat}
+                      lng={coordinates[0].lon}
+                      imageUrl={
+                        location?.thumbnail?.source ||
+                        `${process.env.PUBLIC_URL}/placeholder.png`
+                      }
+                      title={location.title}
+                    />
+                  );
+                })
+              : null}
+          </GoogleMapReact>
         </div>
       </div>
     </>
