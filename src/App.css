@@ -181,3 +181,7 @@ a.active {
 .search__error h2 {
   text-align: center;
 }
+
+.gm-style img {
+  object-fit: cover !important;
+}

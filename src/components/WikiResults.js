@@ -31,7 +31,7 @@ const WikiResults = () => {
         }
 
         const data = await res.json();
-        setData({ ...data, centerCoords: { lat, lng }, zoom: 11 });
+        setData({ ...data, centerCoords: { lat, lng }, zoom: 16 });
         setStatus('success');
       } catch (error) {
         console.error(error);
