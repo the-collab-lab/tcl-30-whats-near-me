@@ -28,7 +28,7 @@ const Map = ({ data }) => {
             yesIWantToUseGoogleMapApiInternals={true}
             onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
           >
-            {data && data.query.pages.length > 0 && loaded
+            {data?.query?.pages?.length > 0 && loaded
               ? data.query.pages.map((location) => {
                   const { coordinates, pageid: id } = location;
                   return (
