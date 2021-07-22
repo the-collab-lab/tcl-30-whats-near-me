@@ -1,9 +1,5 @@
-import React, { useContext } from 'react';
-import { SearchResultsContext } from './SearchResults';
+import React from 'react';
 
-const List = () => {
-  const { data } = useContext(SearchResultsContext);
-  return <h1>List</h1>;
-};
+const List = () => <h1>List</h1>;
 
 export default List;
