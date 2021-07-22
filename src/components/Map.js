@@ -41,11 +41,7 @@ const Map = () => {
                         location?.thumbnail?.source ||
                         `${process.env.PUBLIC_URL}/placeholder.png`
                       }
-                      alt={
-                        location?.thumbnail?.source
-                          ? location.title
-                          : 'placeholder-image'
-                      }
+                      alt={location?.thumbnail?.source ? location.title : ''}
                     />
                   );
                 })

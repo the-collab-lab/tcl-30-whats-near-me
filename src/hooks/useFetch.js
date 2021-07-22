@@ -11,9 +11,7 @@ const useFetch = (url, lat, lng) => {
     const getWikiEntries = async (lat, lng) => {
       setStatus('loading');
       try {
-        const res = await fetch(
-          `https://segdeha.com/api/nearby.php?lat=${lat}&lng=${lng}`,
-        );
+        const res = await fetch(url);
 
         if (!res.ok) {
           throw new Error(res.status);
