@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import SearchResults from './components/SearchResults';
+import SearchResults from './context/SearchResults';
 import List from './components/List';
 import Settings from './components/Settings';
 import Help from './components/Help';

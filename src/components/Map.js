@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 
 import GoogleMapReact from 'google-map-react';
 
-import { SearchResultsContext } from './SearchResults';
+import { SearchResultsContext } from '../context/SearchResults';
 
 import Pin from './Pin';
 

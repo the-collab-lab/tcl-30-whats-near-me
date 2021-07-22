@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 
-import Spinner from './Spinner';
-import ErrorMessage from './ErrorMessage';
+import Spinner from '../components/Spinner';
+import ErrorMessage from '../components/ErrorMessage';
 
 import useFetch from '../hooks/useFetch';
 
