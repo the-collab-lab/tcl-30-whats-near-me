@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = (url) => {
+const useFetch = (url, lat, lng) => {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
-
-  const { lat, lng } = { lat: 48.8566, lng: 2.3522 };
 
   useEffect(() => {
     if (!url) return;
