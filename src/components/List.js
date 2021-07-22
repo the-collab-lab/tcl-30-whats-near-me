@@ -14,13 +14,13 @@ const List = () => {
   return (
     <div>
       <h1>List</h1>
-      <div className="pages">
+      <ul className="pages">
         {loading && <p>Loading... </p>}
 
         {pages.map((page) => (
           <Page key={page.pageid} page={page} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
