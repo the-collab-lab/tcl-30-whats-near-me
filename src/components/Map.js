@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import GoogleMapReact from 'google-map-react';
 
+import { SearchResultsContext } from './SearchResults';
+
 import Pin from './Pin';
 
-const Map = ({ data }) => {
+const Map = () => {
   const [loaded, setLoaded] = useState(false);
-
+  const { data } = useContext(SearchResultsContext);
   const { centerCoords, zoom } = data;
 
   const handleApiLoaded = (map, maps) => {

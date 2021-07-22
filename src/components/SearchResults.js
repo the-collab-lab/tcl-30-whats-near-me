@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 
 import Spinner from './Spinner';
 import ErrorMessage from './ErrorMessage';
 
-import Map from './Map';
+export const SearchResultsContext = createContext();
 
-const WikiResults = () => {
+const SearchResults = ({ children }) => {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
@@ -50,7 +50,11 @@ const WikiResults = () => {
     return <ErrorMessage error={error} />;
   }
 
-  return isSuccess ? <Map data={data} /> : null;
+  return isSuccess ? (
+    <SearchResultsContext.Provider value={{ data }}>
+      {children}
+    </SearchResultsContext.Provider>
+  ) : null;
 };
 
-export default WikiResults;
+export default SearchResults;
