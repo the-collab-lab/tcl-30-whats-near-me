@@ -11,7 +11,7 @@ const SearchResults = ({ children }) => {
   const { lat, lng } = { lat: 48.8566, lng: 2.3522 };
   const url =
     lat && lng && `https://segdeha.com/api/nearby.php?lat=${lat}&lng=${lng}`;
-  const { status, data, error } = useFetch(url);
+  const { status, data, error } = useFetch(url, lat, lng);
 
   const isLoading = status === 'loading';
   const isSuccess = status === 'success';
