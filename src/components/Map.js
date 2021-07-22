@@ -11,9 +11,8 @@ const Map = () => {
   const { data } = useContext(SearchResultsContext);
   const { centerCoords, zoom } = data;
 
-  const handleApiLoaded = (map, maps) => {
+  const handleApiLoaded = () => {
     setLoaded(true);
-    console.log(map, maps);
   };
 
   return (
@@ -28,7 +27,7 @@ const Map = () => {
             defaultCenter={centerCoords}
             defaultZoom={zoom}
             yesIWantToUseGoogleMapApiInternals={true}
-            onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+            onGoogleApiLoaded={handleApiLoaded}
           >
             {data?.query?.pages?.length > 0 && loaded
               ? data.query.pages.map((location) => {
