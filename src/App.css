@@ -142,3 +142,8 @@ nav {
 a.active {
   text-decoration: underline;
 }
+
+.list {
+  min-height: 100%;
+  padding: 0;
+}
