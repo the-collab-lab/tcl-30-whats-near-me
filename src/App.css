@@ -147,7 +147,10 @@ a.active {
 
 .page {
   align-items: center;
+  background-color: #e9e7f7;
   border-radius: 0.5rem;
+  box-shadow: 3px 3px #1c2334;
+  color: #000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -155,20 +158,21 @@ a.active {
   padding: 0.5rem 1rem;
 }
 
-.page:nth-child(even) {
-  background-color: rgb(207, 233, 182);
+.page:hover {
+  background-color: #2c265f;
+  color: #fff;
 }
 
-.page:nth-child(odd) {
-  background-color: rgb(247, 210, 169);
+.page:hover .page__link {
+  color: #fff;
 }
 
 .page__distance,
 .page__figcaption {
-  background-color: #000;
+  background-color: #fff;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  color: #fff;
+  color: #000;
   font-size: 0.95rem;
   text-align: center;
   width: 100%;
@@ -205,17 +209,19 @@ a.active {
 }
 
 .page__link {
-  color: black;
+  color: #000;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
 .page__link:active,
 .page__link:visited {
-  color: black;
+  color: #000;
 }
 
 .page__title {
   font-size: 1.2rem;
+  font-weight: 700;
   line-height: 1.1;
 }
 
