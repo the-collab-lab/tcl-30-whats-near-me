@@ -1,8 +1,11 @@
 const getLocationsFromResponseAPI = (response = null) => {
-  if (response === null) return response;
+  if (response === null) return [];
+  if (typeof response.data === 'undefined') return [];
+  if (typeof response.data.query === 'undefined') return [];
 
-  const { query } = response;
-  const pages = typeof query === 'undefined' ? [] : query.pages;
+  const { query } = response.data;
+  const pages = typeof query.pages === 'undefined' ? [] : query.pages;
+
   return typeof pages === 'undefined' ? [] : pages;
 };
 
