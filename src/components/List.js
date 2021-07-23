@@ -10,16 +10,18 @@ const List = () => {
   return (
     <div className="list">
       <h1 className="list__title">List</h1>
-      {loading && <p className="list__message">Loading... </p>}
-      {locations?.length === 0 ? (
-        <p className="list__message">List of locations is empty</p>
-      ) : (
-        <ul className="list__locations">
-          {locations.map((location) => (
-            <Location key={location.pageid} location={location} />
-          ))}
-        </ul>
-      )}
+      <div className="view__content">
+        {loading && <p className="list__message">Loading... </p>}
+        {locations?.length === 0 ? (
+          <p className="list__message">List of locations is empty</p>
+        ) : (
+          <ul className="list__locations">
+            {locations.map((location) => (
+              <Location key={location.pageid} location={location} />
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
