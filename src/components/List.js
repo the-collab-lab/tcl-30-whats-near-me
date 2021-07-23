@@ -8,7 +8,7 @@ const List = () => {
   const { locations, loading } = useLocations(lat, lng);
 
   return (
-    <div className="list">
+    <>
       <h1 className="list__title">List</h1>
       <div className="view__content">
         {loading && <p className="list__message">Loading... </p>}
@@ -22,7 +22,7 @@ const List = () => {
           </ul>
         )}
       </div>
-    </div>
+    </>
   );
 };
 export default List;
