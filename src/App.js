@@ -15,7 +15,7 @@ const App = () => {
     <SearchResults>
       <Router>
         <div className="app">
-          <main>
+          <main className="app__content">
             <Switch>
               <Route path="/" exact component={Map} />
               <Route path="/list" component={List} />

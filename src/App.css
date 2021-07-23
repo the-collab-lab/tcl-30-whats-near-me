@@ -80,30 +80,20 @@ body {
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  max-height: 100vh;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
 }
 
-.app > .map {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.map {
-  height: 70vh;
-}
-
-.app > :first-child:not(main) {
-  margin-top: 0;
-}
-
-.app > :last-child:not(main) {
-  margin-bottom: 0;
+.app__content {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
 }
 
 h1 {
@@ -117,8 +107,11 @@ main > h1 + * {
   margin-top: 1rem;
 }
 
-.map__inner {
-  width: 100%;
+.view__content {
+  overflow-y: auto;
+}
+
+.map {
   height: 100%;
 }
 
@@ -159,6 +152,11 @@ nav {
 
 a.active {
   text-decoration: underline;
+}
+
+.list {
+  min-height: 100%;
+  padding: 0;
 }
 
 .spinner-container {
