@@ -1,7 +1,7 @@
 import defaultLocationImg from '../assets/default-location.svg';
 
-const Page = ({ page }) => {
-  const { pageid, title, description, thumbnail, coordinates } = page;
+export const Location = ({ location }) => {
+  const { pageid, title, description, thumbnail, coordinates } = location;
   const dist = typeof coordinates[0] === 'undefined' ? 0 : coordinates[0].dist;
   const imgSrc =
     typeof thumbnail === 'undefined' ? defaultLocationImg : thumbnail.source;
@@ -29,5 +29,3 @@ const Page = ({ page }) => {
     </li>
   );
 };
-
-export default Page;

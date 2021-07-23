@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
 import { fixturesnearby } from '../fixtures/fixturesnearby';
 import {
-  getPagesFromResponseAPI,
-  sortPagesByDistance,
+  getLocationsFromResponseAPI,
+  sortLocationsByDistance,
 } from '../helpers/helpersAPI';
 
-export const usePages = (lat = 0, lng = 0) => {
-  const [pages, setPages] = useState([]);
+export const useLocations = (lat = 0, lng = 0) => {
+  const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     try {
       const responseAPI = fixturesnearby({ lat, lng });
-      const pagesResponse = getPagesFromResponseAPI(responseAPI);
-      setPages(sortPagesByDistance(pagesResponse));
+      const locationsResponse = getLocationsFromResponseAPI(responseAPI);
+      setLocations(sortLocationsByDistance(locationsResponse));
     } catch (error) {
       setError(error);
     } finally {
@@ -22,5 +22,5 @@ export const usePages = (lat = 0, lng = 0) => {
     }
   }, [lat, lng]);
 
-  return { pages, loading, error };
+  return { locations, loading, error };
 };

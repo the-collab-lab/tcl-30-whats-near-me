@@ -1,4 +1,4 @@
-const getPagesFromResponseAPI = (response = null) => {
+const getLocationsFromResponseAPI = (response = null) => {
   if (response === null) return response;
 
   const { query } = response;
@@ -6,12 +6,12 @@ const getPagesFromResponseAPI = (response = null) => {
   return typeof pages === 'undefined' ? [] : pages;
 };
 
-const sortPagesByDistance = (pages = []) => {
-  if (pages.length === 0) return pages;
+const sortLocationsByDistance = (locations = []) => {
+  if (locations.length === 0) return locations;
 
-  return pages.sort((a, b) => {
+  return locations.sort((a, b) => {
     return a.coordinates[0].dist - b.coordinates[0].dist;
   });
 };
 
-export { getPagesFromResponseAPI, sortPagesByDistance };
+export { getLocationsFromResponseAPI, sortLocationsByDistance };
