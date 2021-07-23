@@ -1,18 +1,20 @@
-import React from 'react';
-import { useLocations } from '../hooks/useLocations';
+import React, { useContext } from 'react';
+import { SearchResultsContext } from '../context/SearchResults';
+import {
+  getLocationsFromResponseAPI,
+  sortLocationsByDistance,
+} from '../helpers/helpersAPI';
 import { Location } from './Location';
-import Spinner from './Spinner';
 
 const List = () => {
-  const lat = 48.8566;
-  const lng = 2.3522;
-  const { locations, loading } = useLocations(lat, lng);
+  const responseAPI = useContext(SearchResultsContext);
+  const locationsResponse = getLocationsFromResponseAPI(responseAPI);
+  const locations = sortLocationsByDistance(locationsResponse);
 
   return (
     <>
       <h1 className="list__title">List</h1>
       <div className="view__content">
-        {loading && <Spinner />}
         {locations?.length === 0 ? (
           <p className="list__message">List of locations is empty</p>
         ) : (
