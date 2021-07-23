@@ -3,24 +3,23 @@ import { usePages } from '../hooks/usePages';
 import Page from './Page';
 
 const List = () => {
-  const centerMap = {
-    // lat: 0,
-    // lng: 0,
-    lat: 48.8566,
-    lng: 2.3522,
-  };
-  const { pages, loading } = usePages(centerMap);
+  const lat = 48.8566;
+  const lng = 2.3522;
+  const { pages, loading } = usePages(lat, lng);
 
   return (
     <div>
       <h1>List</h1>
-      <ul className="pages">
-        {loading && <p>Loading... </p>}
-
-        {pages.map((page) => (
-          <Page key={page.pageid} page={page} />
-        ))}
-      </ul>
+      {loading && <p>Loading... </p>}
+      {pages?.length === 0 ? (
+        <p>List is empty</p>
+      ) : (
+        <ul className="pages">
+          {pages.map((page) => (
+            <Page key={page.pageid} page={page} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
