@@ -8,13 +8,13 @@ const List = () => {
   const { locations, loading } = useLocations(lat, lng);
 
   return (
-    <div>
-      <h1>List</h1>
-      {loading && <p>Loading... </p>}
+    <div className="list">
+      <h1 className="list__title">List</h1>
+      {loading && <p className="list__message">Loading... </p>}
       {locations?.length === 0 ? (
-        <p>List of locations is empty</p>
+        <p className="list__message">List of locations is empty</p>
       ) : (
-        <ul className="pages">
+        <ul className="list__locations">
           {locations.map((location) => (
             <Location key={location.pageid} location={location} />
           ))}

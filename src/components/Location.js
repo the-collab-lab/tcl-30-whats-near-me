@@ -7,20 +7,20 @@ export const Location = ({ location }) => {
     typeof thumbnail === 'undefined' ? defaultLocationImg : thumbnail.source;
 
   return (
-    <li className="page">
-      <div className="page__info">
-        <figure className="page__cover">
-          <img className="page__image" src={imgSrc} alt={title} />
-          <figcaption className="page__figcaption">{dist} Km.</figcaption>
+    <li className="location">
+      <div className="location__info">
+        <figure className="location__cover">
+          <img className="location__image" src={imgSrc} alt={title} />
+          <figcaption className="location__figcaption">{dist} Km.</figcaption>
         </figure>
-        <div className="page__location">
-          <h2 className="page__title">{title}</h2>
-          <p className="page__description">{description}</p>
+        <div className="location__location">
+          <h2 className="location__title">{title}</h2>
+          <p className="location__description">{description}</p>
         </div>
-        <div className="page__actions">
+        <div className="location__actions">
           <a
             href={`https://en.wikipedia.org/?curid=${pageid}`}
-            className="page__link"
+            className="location__link"
           >
             <i className="fas fa-info-circle"></i>
           </a>
