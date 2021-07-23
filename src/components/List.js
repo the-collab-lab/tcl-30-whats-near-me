@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocations } from '../hooks/useLocations';
 import { Location } from './Location';
+import Spinner from './Spinner';
 
 const List = () => {
   const lat = 48.8566;
@@ -11,7 +12,7 @@ const List = () => {
     <>
       <h1 className="list__title">List</h1>
       <div className="view__content">
-        {loading && <p className="list__message">Loading... </p>}
+        {loading && <Spinner />}
         {locations?.length === 0 ? (
           <p className="list__message">List of locations is empty</p>
         ) : (
