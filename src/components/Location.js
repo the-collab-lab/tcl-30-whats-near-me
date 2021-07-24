@@ -21,6 +21,7 @@ export const Location = ({ location }) => {
           <a
             href={`https://en.wikipedia.org/?curid=${pageid}`}
             className="location__link"
+            aria-label={`Read more about ${title}`}
           >
             <i className="fas fa-info-circle"></i>
           </a>
