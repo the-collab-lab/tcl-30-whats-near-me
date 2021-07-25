@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 
 import GoogleMapReact from 'google-map-react';
 import { Dialog } from '@reach/dialog';
+import '@reach/dialog/styles.css';
 
 import { SearchResultsContext } from '../context/SearchResults';
 
@@ -43,7 +44,6 @@ const Map = () => {
             {data?.query?.pages?.length > 0 && loaded
               ? data.query.pages.map((location) => {
                   const { coordinates, pageid: id } = location;
-
                   return (
                     <Pin
                       key={id}
@@ -61,15 +61,16 @@ const Map = () => {
                   );
                 })
               : null}
-            {locationDetails && (
-              <Dialog className="dialog" aria-label="Location details">
-                <DialogBody
-                  locationDetails={locationDetails}
-                  onClick={handleClose}
-                />
-              </Dialog>
-            )}
           </GoogleMapReact>
+
+          {locationDetails ? (
+            <Dialog className="dialog" aria-label="Location details">
+              <DialogBody
+                onClick={handleClose}
+                locationDetails={locationDetails}
+              />
+            </Dialog>
+          ) : null}
         </div>
       </div>
     </>
