@@ -30,8 +30,8 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
 }
 
 img,
@@ -340,18 +340,92 @@ a.active {
   text-align: left;
 }
 
-/* dialog */
-[role='‘dialog’'] {
-  padding: 20px;
-  background-color: white;
-  border: 2px solid fuchsia;
-  border-radius: 2px;
+/*--------------------------------------------------------------------------*\
+   DIALOG
+\*--------------------------------------------------------------------------*/
+
+[data-reach-dialog-overlay] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
 }
 
-.dialog {
-  top: 50%;
-  bottom: auto;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
+[role='dialog'] {
+  padding: 2.5rem;
+  border: 2px solid;
+  border-radius: 0.25rem;
+  background-color: #fff;
+}
+
+[data-reach-dialog-content] {
+  min-width: 100vw;
+  margin: 0 auto;
+  background: white;
+  outline: none;
+  z-index: 1;
+  position: relative;
+}
+
+@media screen and (min-width: 43rem) {
+  [data-reach-dialog-content] {
+    min-width: 45vw;
+    margin: 10vh auto;
+  }
+}
+
+.dialog__button {
+  background: none;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  line-height: 0;
+}
+
+.dialog__button svg {
+  fill: currentColor;
+  margin-top: 0.1em;
+  vertical-align: text-top;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.dialog__image {
+  --width: 9;
+  --height: 16;
+  padding-bottom: calc(var(--width) / var(--height) * 100%);
+  position: relative;
+}
+
+.dialog__image > * {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid black;
+}
+
+.dialog__body__link {
+  color: #1c2334;
+}
+
+.dialog__body__link:hover {
+  text-decoration: underline;
 }
