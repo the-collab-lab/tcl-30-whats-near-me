@@ -6,6 +6,7 @@ import { Dialog } from '@reach/dialog';
 import { SearchResultsContext } from '../context/SearchResults';
 
 import Pin from './Pin';
+import DialogBody from './DialogBody';
 
 const Map = () => {
   const [loaded, setLoaded] = useState(false);
@@ -61,34 +62,7 @@ const Map = () => {
                 })
               : null}
             {locationDetails && (
-              <Dialog className="dialog" aria-label="locationDetails">
-                <button>HI BUTTON CLOSE WHAT</button>
-                <div>
-                  <img
-                    src={
-                      locationDetails?.thumbnail?.source ||
-                      `${process.env.PUBLIC_URL}/placeholder.png`
-                    }
-                    alt={
-                      locationDetails?.thumbnail?.source
-                        ? locationDetails.title
-                        : ''
-                    }
-                  />
-                </div>
-                <div>
-                  <h2>{locationDetails.title}</h2>
-                  <p>{locationDetails.description}</p>
-                  <p>{locationDetails.coordinates[0].dist}</p>
-                  <p>
-                    <a
-                      href={`https://en.wikipedia.org/?curid=${locationDetails.pageid}`}
-                    >
-                      HERE IS A LINK TO MORE INFO
-                    </a>
-                  </p>
-                </div>
-              </Dialog>
+              <Dialog className="dialog" aria-label="Location details"></Dialog>
             )}
           </GoogleMapReact>
         </div>
