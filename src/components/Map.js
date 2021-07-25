@@ -21,6 +21,10 @@ const Map = () => {
     setLocationDetails(location);
   };
 
+  const handleClose = () => {
+    setLocationDetails(null);
+  };
+
   return (
     <>
       <h1>What's Near Me?</h1>
