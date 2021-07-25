@@ -62,7 +62,12 @@ const Map = () => {
                 })
               : null}
             {locationDetails && (
-              <Dialog className="dialog" aria-label="Location details"></Dialog>
+              <Dialog className="dialog" aria-label="Location details">
+                <DialogBody
+                  locationDetails={locationDetails}
+                  onClick={handleClose}
+                />
+              </Dialog>
             )}
           </GoogleMapReact>
         </div>
