@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Pin = ({ imageUrl, alt }) => (
-  <div className="map-icon bounce">
+const Pin = ({ imageUrl, alt, onClick }) => (
+  <div className="map-icon bounce" onClick={onClick} aria-hidden="true">
     <img src={imageUrl} alt={alt} />
     <svg viewBox="0 0 32 32" aria-labelledby="caret-icon">
       <title id="caret-icon">Caret Icon</title>

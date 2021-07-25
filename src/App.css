@@ -339,3 +339,19 @@ a.active {
 .location__title {
   text-align: left;
 }
+
+/* dialog */
+[role='‘dialog’'] {
+  padding: 20px;
+  background-color: white;
+  border: 2px solid fuchsia;
+  border-radius: 2px;
+}
+
+.dialog {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
