@@ -22,15 +22,16 @@ const DialogBody = ({ locationDetails, onClick }) => (
       />
     </div>
     <div className="dialog__body">
+      <h2>{locationDetails.title}</h2>
+      <p>{locationDetails.description}</p>
+      <p>Distance: {locationDetails.coordinates[0].dist} km</p>
       <a
         className="dialog__body__link"
         href={`https://en.wikipedia.org/?curid=${locationDetails.pageid}`}
         aria-label={`Read more about ${locationDetails.title}`}
       >
-        <h2>{locationDetails.title}</h2>
+        Learn More
       </a>
-      <p>{locationDetails.description}</p>
-      <p>Distance: {locationDetails.coordinates[0].dist} km</p>
     </div>
   </>
 );
