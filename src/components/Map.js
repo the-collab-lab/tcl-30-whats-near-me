@@ -4,13 +4,12 @@ import { useContext, useState } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
 import { LocationsContext } from '../context/LocationsContext';
 
-export const Map = ({ lat, lng, zoom = 16 }) => {
+export const Map = ({ defaultCenterMap, centerMap, zoom = 16 }) => {
   const [loaded, setLoaded] = useState(false);
-  const defaultCenterMap = { lat: 48.8566, lng: 2.3522 };
   const valueLocations = useContext(LocationsContext);
-  const { locations } = valueLocations;
   const valueCenterMap = useContext(MapCenterContext);
-  const { newCenterMap, setNewCenterMap } = valueCenterMap;
+  const { locations } = valueLocations;
+  const { setNewCenterMap } = valueCenterMap;
 
   const handleApiLoaded = () => {
     setLoaded(true);
@@ -36,7 +35,7 @@ export const Map = ({ lat, lng, zoom = 16 }) => {
         defaultZoom={zoom}
         yesIWantToUseGoogleMapApiInternals={true}
         onGoogleApiLoaded={handleApiLoaded}
-        center={newCenterMap}
+        center={centerMap}
         onDragEnd={(event) => centerMoved(event)}
       >
         {locations?.length > 0 && loaded
