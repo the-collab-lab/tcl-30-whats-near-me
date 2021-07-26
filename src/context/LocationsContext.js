@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { MapCenterContext } from './MapCenterContext';
-import useFetch from '../hooks/useFetch';
+import { useLocations } from '../hooks/useLocations';
 
 export const LocationsContext = createContext();
 
@@ -9,10 +9,8 @@ const Locations = ({ children }) => {
   const { newCenterMap } = valueMapCenter;
   const lat = newCenterMap.lat;
   const lng = newCenterMap.lng;
-  const url =
-    lat && lng && `https://segdeha.com/api/nearby.php?lat=${lat}&lng=${lng}`;
-  const { locations } = useFetch(url, lat, lng);
-  const value = { locations };
+  const { isFetching, locations } = useLocations(lat, lng);
+  const value = { locations, isFetching };
 
   return (
     <LocationsContext.Provider value={value}>
