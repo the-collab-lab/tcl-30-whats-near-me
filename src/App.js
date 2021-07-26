@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import MapCenter from './context/MapCenterContext';
-import List from './components/List';
+import ListPage from './components/ListPage';
 import Settings from './components/Settings';
 import Help from './components/Help';
 import Nav from './components/Nav';
@@ -20,7 +20,7 @@ const App = () => {
             <main className="app__content">
               <Switch>
                 <Route path="/" exact component={MapPage} />
-                <Route path="/list" component={List} />
+                <Route path="/list" component={ListPage} />
                 <Route path="/settings" component={Settings} />
                 <Route path="/help" component={Help} />
               </Switch>
