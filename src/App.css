@@ -377,6 +377,14 @@ a.active {
   }
 }
 
+button:focus {
+  outline-color: #f586ae;
+}
+
+button:hover {
+  background-color: #f586ae;
+}
+
 .dialog__button {
   background: none;
   border: 0;
