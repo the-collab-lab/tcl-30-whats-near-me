@@ -30,7 +30,6 @@ const DialogBody = ({ locationDetails, onClick }) => (
       </a>
       <p>{locationDetails.description}</p>
       <p>Distance: {locationDetails.coordinates[0].dist} km</p>
-      <p></p>
     </div>
   </>
 );
