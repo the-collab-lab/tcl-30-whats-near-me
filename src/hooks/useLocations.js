@@ -19,6 +19,7 @@ export const useLocations = (lat, lng) => {
     const baseURL = 'https://segdeha.com/api/nearby.php';
     const completeURL = lat && lng && `${baseURL}?lat=${lat}&lng=${lng}`;
 
+    setStatus('loading');
     fetch(completeURL, { signal })
       .then((response) => {
         setIsFetching(true);
@@ -29,18 +30,19 @@ export const useLocations = (lat, lng) => {
         setStatus('success');
       })
       .catch((err) => {
-        console.error('Uh oh, an error!', err);
+        setStatus('error');
         setError(err);
         if (err.name === 'AbortError') {
-          setStatus('Fetch aborted');
+          console.log('Fetch cancelled');
         } else {
-          setStatus(err.message);
+          console.error('Uh oh, an error!', err);
         }
       })
       .finally(() => setIsFetching(false));
 
     // Clean up
     return function cancel() {
+      setStatus('cancelled');
       abortController?.abort();
     };
   }, [lat, lng]);
