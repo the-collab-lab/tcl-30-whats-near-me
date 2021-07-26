@@ -22,7 +22,6 @@ export const Map = ({ lat, lng, zoom = 16 }) => {
     const newMapCenter = { lat, lng };
 
     setTimeout(() => {
-      // console.log('Center moved', { newMapCenter });
       setNewCenterMap(newMapCenter);
     }, 5000);
   };
