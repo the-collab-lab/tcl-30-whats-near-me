@@ -25,6 +25,7 @@ const DialogBody = ({ locationDetails, onClick }) => (
       <a
         className="dialog__body__link"
         href={`https://en.wikipedia.org/?curid=${locationDetails.pageid}`}
+        aria-label={`Read more about ${locationDetails.title}`}
       >
         <h2>{locationDetails.title}</h2>
       </a>
