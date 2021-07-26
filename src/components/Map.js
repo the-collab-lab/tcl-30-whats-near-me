@@ -22,7 +22,7 @@ export const Map = ({
     const lng = event?.center?.lng();
     const newMapCenter = { lat, lng };
 
-    setTimeout(() => {
+    window.setTimeout(() => {
       setNewCenterMap(newMapCenter);
     }, 5000);
   };
