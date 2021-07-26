@@ -2,13 +2,15 @@ import Pin from './Pin';
 import GoogleMapReact from 'google-map-react';
 import { useContext, useState } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
-import { LocationsContext } from '../context/LocationsContext';
 
-export const Map = ({ defaultCenterMap, centerMap, zoom = 16 }) => {
+export const Map = ({
+  defaultCenterMap,
+  centerMap,
+  locations = [],
+  zoom = 16,
+}) => {
   const [loaded, setLoaded] = useState(false);
-  const valueLocations = useContext(LocationsContext);
   const valueCenterMap = useContext(MapCenterContext);
-  const { locations } = valueLocations;
   const { setNewCenterMap } = valueCenterMap;
 
   const handleApiLoaded = () => {

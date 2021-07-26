@@ -1,10 +1,13 @@
 import { useContext } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
 import { Map } from '../components/Map';
+import { LocationsContext } from '../context/LocationsContext';
 
 const MapPage = () => {
   const valueCenterMap = useContext(MapCenterContext);
+  const valueLocations = useContext(LocationsContext);
   const { defaultCenterMap, newCenterMap } = valueCenterMap;
+  const { locations } = valueLocations;
 
   return (
     <>
@@ -13,6 +16,7 @@ const MapPage = () => {
         <Map
           defaultCenterMap={defaultCenterMap}
           centerMap={newCenterMap}
+          locations={locations}
           zoom={16}
         />
       </div>
