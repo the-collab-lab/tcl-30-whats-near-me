@@ -432,8 +432,5 @@ button:hover {
 
 .dialog__body__link {
   color: #1c2334;
-}
-
-.dialog__body__link:hover {
   text-decoration: underline;
 }
