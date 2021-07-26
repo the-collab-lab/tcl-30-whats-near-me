@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
-import { Map } from './Map';
+import { Map } from '../components/Map';
 
 const MapPage = () => {
   const valueCenterMap = useContext(MapCenterContext);

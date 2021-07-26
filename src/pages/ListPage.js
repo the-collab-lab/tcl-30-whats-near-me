@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { LocationsContext } from '../context/LocationsContext';
 import { sortLocationsByDistance } from '../helpers/helpersAPI';
-import { LocationList } from './LocationList';
+import { LocationList } from '../components/LocationList';
 
 const ListPage = () => {
   const value = useContext(LocationsContext);
