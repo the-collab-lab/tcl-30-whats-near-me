@@ -4,7 +4,11 @@ import CloseIcon from './CloseIcon';
 
 const DialogBody = ({ locationDetails, onClick }) => (
   <>
-    <button className="dialog__button" onClick={onClick}>
+    <button
+      className="dialog__button"
+      aria-label="close dialog"
+      onClick={onClick}
+    >
       <CloseIcon />
     </button>
 
