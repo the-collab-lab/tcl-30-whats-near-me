@@ -9,8 +9,8 @@ const Locations = ({ children }) => {
   const { newCenterMap } = valueMapCenter;
   const lat = newCenterMap.lat;
   const lng = newCenterMap.lng;
-  const { isFetching, locations } = useLocations(lat, lng);
-  const value = { locations, isFetching };
+  const { isFetching, locations, status, error } = useLocations(lat, lng);
+  const value = { locations, isFetching, status, error };
 
   return (
     <LocationsContext.Provider value={value}>
