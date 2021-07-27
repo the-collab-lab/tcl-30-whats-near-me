@@ -24,7 +24,7 @@ export const Map = ({
 
     window.setTimeout(() => {
       setNewCenterMap(newMapCenter);
-    }, 5000);
+    }, 1000);
   };
 
   return (
