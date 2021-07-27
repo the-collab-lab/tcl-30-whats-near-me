@@ -3,6 +3,7 @@ import React from 'react';
 const Pin = ({ imageUrl, alt, onClick }) => (
   <div
     className="map-icon bounce"
+    onClick={onClick}
     onKeyPress={onClick}
     role="button"
     tabIndex="0"
