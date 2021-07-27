@@ -10,10 +10,6 @@ export const useLocations = (lat, lng) => {
     // Abort fetch
     let abortController = new AbortController();
     const { signal } = abortController;
-    signal.addEventListener('abort', () => {
-      // Logs true:
-      console.log(signal.aborted);
-    });
 
     // Call to API
     const baseURL = 'https://segdeha.com/api/nearby.php';
