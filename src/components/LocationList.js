@@ -5,7 +5,7 @@ export const LocationList = ({ locations = [] }) => {
 
   return (
     <ul className="list__locations">
-      {locations?.map((location) => (
+      {locations.map((location) => (
         <Location key={location.pageid} location={location} />
       ))}
     </ul>
