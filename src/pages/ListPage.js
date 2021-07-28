@@ -14,11 +14,11 @@ const ListPage = () => {
     <>
       <h1 className="list__title">List</h1>
       <div className="view__content">
-        {status === 'loading' && <Spinner />}
-        {status === 'error' && <ErrorMessage error={error} />}
-        {(status === 'success' || status === 'cancelled') && (
+        {status === 'loading' ? <Spinner /> : null}
+        {status === 'error' ? <ErrorMessage error={error} /> : null}
+        {status === 'success' || status === 'cancelled' ? (
           <LocationList locations={locationsSorted} />
-        )}
+        ) : null}
       </div>
     </>
   );
