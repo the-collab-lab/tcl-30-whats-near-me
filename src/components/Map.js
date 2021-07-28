@@ -17,7 +17,7 @@ export const Map = ({
     setLoaded(true);
   };
 
-  const centerMoved = (event) => {
+  const handleCenterMoved = (event) => {
     const lat = event?.center?.lat();
     const lng = event?.center?.lng();
     const newMapCenter = { lat, lng };
@@ -38,7 +38,7 @@ export const Map = ({
         yesIWantToUseGoogleMapApiInternals={true}
         onGoogleApiLoaded={handleApiLoaded}
         center={centerMap}
-        onDragEnd={(event) => centerMoved(event)}
+        onDragEnd={(event) => handleCenterMoved(event)}
       >
         {locations?.length > 0 && loaded
           ? locations?.map((location) => {
