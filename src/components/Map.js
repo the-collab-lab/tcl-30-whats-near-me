@@ -40,8 +40,8 @@ export const Map = ({
         center={centerMap}
         onDragEnd={(event) => handleCenterMoved(event)}
       >
-        {locations?.length > 0 && loaded
-          ? locations?.map((location) => {
+        {locations.length > 0 && loaded
+          ? locations.map((location) => {
               const { coordinates, pageid: id } = location;
               return (
                 <Pin
