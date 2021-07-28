@@ -1,6 +1,9 @@
-import Pin from './Pin';
+import React, { useContext, useState } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { useContext, useState } from 'react';
+import { Dialog } from '@reach/dialog';
+import '@reach/dialog/styles.css';
+import Pin from './Pin';
+import DialogBody from './DialogBody';
 import { MapCenterContext } from '../context/MapCenterContext';
 
 export const Map = ({
@@ -10,11 +13,20 @@ export const Map = ({
   zoom = 16,
 }) => {
   const [loaded, setLoaded] = useState(false);
+  const [locationDetails, setLocationDetails] = useState(null);
   const valueCenterMap = useContext(MapCenterContext);
   const { setNewCenterMap } = valueCenterMap;
 
   const handleApiLoaded = () => {
     setLoaded(true);
+  };
+
+  const handleClick = (location) => {
+    setLocationDetails(location);
+  };
+
+  const handleClose = () => {
+    setLocationDetails(null);
   };
 
   const handleCenterMoved = (event) => {
@@ -53,11 +65,24 @@ export const Map = ({
                     `${process.env.PUBLIC_URL}/placeholder.png`
                   }
                   alt={location?.thumbnail?.source ? location.title : ''}
+                  onClick={() => {
+                    handleClick(location);
+                  }}
                 />
               );
             })
           : null}
       </GoogleMapReact>
+
+      {locationDetails ? (
+        <Dialog
+          className="dialog"
+          aria-label="Location details"
+          onDismiss={handleClose}
+        >
+          <DialogBody onClick={handleClose} locationDetails={locationDetails} />
+        </Dialog>
+      ) : null}
     </div>
   );
 };
