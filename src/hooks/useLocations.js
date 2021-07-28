@@ -28,11 +28,6 @@ export const useLocations = (lat, lng) => {
       .catch((err) => {
         setStatus('error');
         setError(err);
-        if (err.name === 'AbortError') {
-          console.log('Fetch cancelled');
-        } else {
-          console.error('Uh oh, an error!', err);
-        }
       })
       .finally(() => setIsFetching(false));
 
