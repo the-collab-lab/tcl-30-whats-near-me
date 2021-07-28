@@ -1,18 +1,30 @@
 import React, { useContext, useState } from 'react';
 
 import GoogleMapReact from 'google-map-react';
+import { Dialog } from '@reach/dialog';
+import '@reach/dialog/styles.css';
 
 import { SearchResultsContext } from '../context/SearchResults';
 
 import Pin from './Pin';
+import DialogBody from './DialogBody';
 
 const Map = () => {
   const [loaded, setLoaded] = useState(false);
+  const [locationDetails, setLocationDetails] = useState(null);
   const { data } = useContext(SearchResultsContext);
   const { centerCoords, zoom } = data;
 
   const handleApiLoaded = () => {
     setLoaded(true);
+  };
+
+  const handleClick = (location) => {
+    setLocationDetails(location);
+  };
+
+  const handleClose = () => {
+    setLocationDetails(null);
   };
 
   return (
@@ -42,11 +54,27 @@ const Map = () => {
                         `${process.env.PUBLIC_URL}/placeholder.png`
                       }
                       alt={location?.thumbnail?.source ? location.title : ''}
+                      onClick={() => {
+                        handleClick(location);
+                      }}
                     />
                   );
                 })
               : null}
           </GoogleMapReact>
+
+          {locationDetails ? (
+            <Dialog
+              className="dialog"
+              aria-label="Location details"
+              onDismiss={handleClose}
+            >
+              <DialogBody
+                onClick={handleClose}
+                locationDetails={locationDetails}
+              />
+            </Dialog>
+          ) : null}
         </div>
       </div>
     </>
