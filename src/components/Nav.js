@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { NavLink } from 'react-router-dom';
+import Button from './ShareLocationButton';
 
 const Nav = () => (
   <footer>
@@ -19,6 +20,9 @@ const Nav = () => (
         </li>
         <li>
           <NavLink to="/help">Help</NavLink>
+        </li>
+        <li>
+          <Button />
         </li>
       </ul>
     </nav>
