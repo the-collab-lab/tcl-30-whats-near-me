@@ -6,8 +6,11 @@ const ShareLocationButton = () => {
   const valueCenterMap = useContext(MapCenterContext);
   const { setNewCenterMap } = valueCenterMap;
 
+  let id;
   const getLocation = (e) => {
-    navigator.geolocation.getCurrentPosition(success, error);
+    // TCL-30-40
+    // 1. call navigator.geolocation.watchPosition()
+    id = navigator.geolocation.watchPosition(success, error);
   };
 
   function success(position) {
@@ -15,9 +18,6 @@ const ShareLocationButton = () => {
     const lng = position.coords.longitude;
     const newMapCenter = { lat, lng };
     setNewCenterMap(newMapCenter);
-    // TCL-30-40
-    // 1. call navigator.geolocation.watchPosition()
-    // 2. Update constantly the new center map position
   }
 
   function error() {
@@ -31,10 +31,11 @@ const ShareLocationButton = () => {
     setNewCenterMap(defaultCenterMap);
 
     // TCL-30-40
-    // 3. Stop watching... navigator.geolocation.clearWatch()
     // Return to previous state
-    // 4. get new  center map (latitude, longitude) from Localstorage
-    // 5. pass new center map (latitude, longitude) to setNewCenterMap
+    // 3. get new  center map (latitude, longitude) from current position
+    navigator.geolocation.getCurrentPosition(success, error);
+    // 4. Stop watching... navigator.geolocation.clearWatch()
+    navigator.geolocation.clearWatch(id);
   }
 
   return <button onClick={getLocation}>Share Location</button>;
