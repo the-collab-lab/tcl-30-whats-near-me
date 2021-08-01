@@ -42,6 +42,9 @@ export const Map = ({
 
   return (
     <div className="map">
+      <p>{`Lat: ${centerMap?.lat?.toFixed(2)}, Lng: ${centerMap?.lng?.toFixed(
+        2,
+      )}`}</p>
       <GoogleMapReact
         bootstrapURLKeys={{
           key: 'AIzaSyCbfV0IAdkkGv-9mmuAkUJNzCPPfGRO6v0',
