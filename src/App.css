@@ -243,6 +243,31 @@ a.active {
   }
 }
 
+.user-location-icon {
+  width: 180px;
+  height: 180px;
+  fill: #a020f0;
+  animation: pulse 2s infinite;
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    fill: rgba(142, 68, 173, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    fill: 0 0 0 10px rgba(142, 68, 173, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    fill: 0 0 0 0 rgba(142, 68, 173, 0);
+  }
+}
+
 /* List & Locations */
 
 .list {

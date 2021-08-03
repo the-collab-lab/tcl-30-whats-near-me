@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 import Pin from './Pin';
+import UserLocationPin from './UserLocationPin';
 import DialogBody from './DialogBody';
 import { MapCenterContext } from '../context/MapCenterContext';
 
@@ -56,6 +57,9 @@ export const Map = ({
         onDragEnd={(event) => handleCenterMoved(event)}
       >
         {/* TCL30-41 2. If user is sharing your location then create a user marker <PinUser /> or use Google Marker with 'new center position' (current position) */}
+
+        <UserLocationPin lat={setNewCenterMap.lat} lng={setNewCenterMap.lng} />
+
         {locations.length > 0 && loaded
           ? locations.map((location) => {
               const { coordinates, pageid: id } = location;
