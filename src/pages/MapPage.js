@@ -13,9 +13,11 @@ const MapPage = () => {
 
   return (
     <>
-      <h1>What's Near Me?</h1>
-      <div className="view__content">
+      <div className="view__header">
+        <h1>What's Near Me?</h1>
         {status === 'loading' ? <Spinner /> : null}
+      </div>
+      <div className="view__content">
         {status === 'error' ? <ErrorMessage error={error} /> : null}
         <Map
           defaultCenterMap={defaultCenterMap}
