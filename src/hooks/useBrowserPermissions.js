@@ -9,7 +9,7 @@ export const useBrowserPermissions = (namePermission = 'geolocation') => {
       .then(function (result) {
         setPermissionStatus(result?.state);
       });
-  }, []);
+  }, [namePermission]);
 
   return { permissionStatus };
 };
