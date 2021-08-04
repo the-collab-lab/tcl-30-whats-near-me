@@ -17,14 +17,12 @@ const MapPage = () => {
       <div className="view__content">
         {status === 'loading' ? <Spinner /> : null}
         {status === 'error' ? <ErrorMessage error={error} /> : null}
-        {status === 'success' || status === 'cancelled' ? (
-          <Map
-            defaultCenterMap={defaultCenterMap}
-            centerMap={newCenterMap}
-            locations={locations}
-            zoom={16}
-          />
-        ) : null}
+        <Map
+          defaultCenterMap={defaultCenterMap}
+          centerMap={newCenterMap}
+          locations={locations}
+          zoom={16}
+        />
       </div>
     </>
   );
