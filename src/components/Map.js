@@ -16,7 +16,6 @@ export const Map = ({
   const [loaded, setLoaded] = useState(false);
   const [locationDetails, setLocationDetails] = useState(null);
   const valueCenterMap = useContext(MapCenterContext);
-  // TCL30-41 1. get new cente map position
   const { setNewCenterMap } = valueCenterMap;
 
   const handleApiLoaded = () => {
@@ -43,8 +42,6 @@ export const Map = ({
 
   return (
     <div className="map">
-      <p>Lat: {centerMap?.lat}</p>
-      <p>Lng: {centerMap?.lng}</p>
       <GoogleMapReact
         bootstrapURLKeys={{
           key: 'AIzaSyCbfV0IAdkkGv-9mmuAkUJNzCPPfGRO6v0',
@@ -56,8 +53,6 @@ export const Map = ({
         center={centerMap}
         onDragEnd={(event) => handleCenterMoved(event)}
       >
-        {/* TCL30-41 2. If user is sharing your location then create a user marker <PinUser /> or use Google Marker with 'new center position' (current position) */}
-
         <UserLocationPin lat={setNewCenterMap.lat} lng={setNewCenterMap.lng} />
 
         {locations.length > 0 && loaded

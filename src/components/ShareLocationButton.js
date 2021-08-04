@@ -8,8 +8,6 @@ const ShareLocationButton = () => {
 
   let id;
   const getLocation = (e) => {
-    // TCL-30-40
-    // 1. call navigator.geolocation.watchPosition()
     id = navigator.geolocation.watchPosition(success, error);
   };
 
@@ -21,20 +19,12 @@ const ShareLocationButton = () => {
   }
 
   function error() {
-    // TCL30-42
-    // 1. get new  center map (latitude, longitude) from Localstorage
-    // 2. pass new center map (latitude, longitude) to setNewCenterMap
     const defaultCenterMap = {
       lat: 48.8566,
       lng: 2.3522,
     };
     setNewCenterMap(defaultCenterMap);
-
-    // TCL-30-40
-    // Return to previous state
-    // 3. get new  center map (latitude, longitude) from current position
     navigator.geolocation.getCurrentPosition(success, error);
-    // 4. Stop watching... navigator.geolocation.clearWatch()
     navigator.geolocation.clearWatch(id);
   }
 
