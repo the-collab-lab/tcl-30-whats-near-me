@@ -6,7 +6,6 @@ import Pin from './Pin';
 import UserLocationPin from './UserLocationPin';
 import DialogBody from './DialogBody';
 import { MapCenterContext } from '../context/MapCenterContext';
-import { useBrowserPermissions } from '../hooks/useBrowserPermissions';
 
 export const Map = ({
   defaultCenterMap,
@@ -16,9 +15,8 @@ export const Map = ({
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [locationDetails, setLocationDetails] = useState(null);
-  const { permissionStatus } = useBrowserPermissions('geolocation');
   const valueCenterMap = useContext(MapCenterContext);
-  const { setNewCenterMap } = valueCenterMap;
+  const { setNewCenterMap, locationShared } = valueCenterMap;
 
   const handleApiLoaded = () => {
     setLoaded(true);
@@ -55,7 +53,7 @@ export const Map = ({
         center={centerMap}
         onDragEnd={(event) => handleCenterMoved(event)}
       >
-        {permissionStatus === 'granted' ? (
+        {navigator.geolocation && locationShared === 'yes' ? (
           <UserLocationPin
             lat={setNewCenterMap.lat}
             lng={setNewCenterMap.lng}
