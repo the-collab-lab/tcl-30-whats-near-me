@@ -34,10 +34,7 @@ export const Map = ({
     const lat = event?.center?.lat();
     const lng = event?.center?.lng();
     const newMapCenter = { lat, lng };
-
-    window.setTimeout(() => {
-      setNewCenterMap(newMapCenter);
-    }, 1000);
+    setNewCenterMap(newMapCenter);
   };
 
   return (

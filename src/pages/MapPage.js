@@ -13,18 +13,18 @@ const MapPage = () => {
 
   return (
     <>
-      <h1>What's Near Me?</h1>
-      <div className="view__content">
+      <header className="view__header">
+        <h1>What's Near Me?</h1>
         {status === 'loading' ? <Spinner /> : null}
+      </header>
+      <div className="view__content">
         {status === 'error' ? <ErrorMessage error={error} /> : null}
-        {status === 'success' || status === 'cancelled' ? (
-          <Map
-            defaultCenterMap={defaultCenterMap}
-            centerMap={newCenterMap}
-            locations={locations}
-            zoom={16}
-          />
-        ) : null}
+        <Map
+          defaultCenterMap={defaultCenterMap}
+          centerMap={newCenterMap}
+          locations={locations}
+          zoom={16}
+        />
       </div>
     </>
   );
