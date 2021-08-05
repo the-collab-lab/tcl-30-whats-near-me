@@ -7,10 +7,16 @@ const MapCenter = ({ children }) => {
     lng: 2.3522,
   };
   const [newCenterMap, setNewCenterMap] = useState(defaultCenterMap);
+  const [userCenterMap, setUserCenterMap] = useState({ lat: 0, lng: 0 });
+  const [userLocationShared, setUserLocationShared] = useState('no');
   const value = {
     defaultCenterMap,
     newCenterMap,
     setNewCenterMap,
+    userLocationShared,
+    setUserLocationShared,
+    userCenterMap,
+    setUserCenterMap,
   };
 
   return (
