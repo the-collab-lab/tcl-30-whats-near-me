@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useLocations = (lat, lng) => {
+export const useLocations = (lat = 0, lng = 0) => {
   const [locations, setLocations] = useState([]);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
