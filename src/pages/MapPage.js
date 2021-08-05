@@ -13,10 +13,10 @@ const MapPage = () => {
 
   return (
     <>
-      <div className="view__header">
+      <header className="view__header">
         <h1>What's Near Me?</h1>
         {status === 'loading' ? <Spinner /> : null}
-      </div>
+      </header>
       <div className="view__content">
         {status === 'error' ? <ErrorMessage error={error} /> : null}
         <Map
