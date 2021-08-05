@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 import Pin from './Pin';
+import UserLocationPin from './UserLocationPin';
 import DialogBody from './DialogBody';
 import { MapCenterContext } from '../context/MapCenterContext';
 
@@ -15,7 +16,7 @@ export const Map = ({
   const [loaded, setLoaded] = useState(false);
   const [locationDetails, setLocationDetails] = useState(null);
   const valueCenterMap = useContext(MapCenterContext);
-  const { setNewCenterMap } = valueCenterMap;
+  const { setNewCenterMap, userLocationShared, userCenterMap } = valueCenterMap;
 
   const handleApiLoaded = () => {
     setLoaded(true);
@@ -52,6 +53,9 @@ export const Map = ({
         center={centerMap}
         onDragEnd={(event) => handleCenterMoved(event)}
       >
+        {navigator.geolocation && userLocationShared === 'yes' ? (
+          <UserLocationPin lat={userCenterMap.lat} lng={userCenterMap.lng} />
+        ) : null}
         {locations.length > 0 && loaded
           ? locations.map((location) => {
               const { coordinates, pageid: id } = location;
