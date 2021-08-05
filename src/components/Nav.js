@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import FlyToMeButton from './FlyToMeButton';
+import ShareLiveLocationButton from './ShareLiveLocationButton';
 
 const Nav = () => (
   <footer>
@@ -21,6 +22,9 @@ const Nav = () => (
         </li>
         <li>
           <FlyToMeButton />
+        </li>
+        <li>
+          <ShareLiveLocationButton />
         </li>
       </ul>
     </nav>
