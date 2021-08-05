@@ -9,6 +9,7 @@ const MapCenter = ({ children }) => {
   const [newCenterMap, setNewCenterMap] = useState(defaultCenterMap);
   const [userCenterMap, setUserCenterMap] = useState({ lat: 0, lng: 0 });
   const [userLocationShared, setUserLocationShared] = useState('no');
+  const [trackingId, setTrackingId] = useState(0);
   const value = {
     defaultCenterMap,
     newCenterMap,
@@ -17,6 +18,8 @@ const MapCenter = ({ children }) => {
     setUserLocationShared,
     userCenterMap,
     setUserCenterMap,
+    trackingId,
+    setTrackingId,
   };
 
   return (
