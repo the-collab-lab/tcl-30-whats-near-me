@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MapCenterContext } from '../context/MapCenterContext';
+import FlyToMeButton from './FlyToMeButton';
 import ShareMyLocationButton from './ShareMyLocationButton';
 
 const Nav = () => {
   const valueCenterMap = useContext(MapCenterContext);
-  const { trackingId } = valueCenterMap;
+  const { trackingId, userLocationShared } = valueCenterMap;
   const wasWatchingLocation = trackingId !== 0;
 
   return (
@@ -33,6 +34,15 @@ const Nav = () => {
           ) : (
             <li>
               <ShareMyLocationButton disabled={true} />
+            </li>
+          )}
+          {userLocationShared ? (
+            <li>
+              <FlyToMeButton />
+            </li>
+          ) : (
+            <li>
+              <FlyToMeButton disabled={true} />
             </li>
           )}
         </ul>
