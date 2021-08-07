@@ -407,7 +407,7 @@ button:enabled:focus {
   outline-color: #f586ae;
 }
 
-button:hover {
+button:enabled:hover {
   background-color: #f586ae;
 }
 
