@@ -10,6 +10,7 @@ const ShareMyLocationButton = ({ disabled = false }) => {
     setTrackingId,
     userLocationShared,
     setUserLocationShared,
+    trackingId,
   } = valueCenterMap;
 
   const handleSuccess = (position) => {
@@ -27,11 +28,13 @@ const ShareMyLocationButton = ({ disabled = false }) => {
 
   const handleShareLiveLocation = () => {
     if (navigator?.geolocation) {
-      const newTrackingId = navigator?.geolocation?.watchPosition(
-        handleSuccess,
-        handleError,
-      );
-      setTrackingId(newTrackingId);
+      if (trackingId === null) {
+        const newTrackingId = navigator?.geolocation?.watchPosition(
+          handleSuccess,
+          handleError,
+        );
+        setTrackingId(newTrackingId);
+      }
     }
   };
 
