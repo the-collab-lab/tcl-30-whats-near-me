@@ -6,11 +6,22 @@ const MapCenter = ({ children }) => {
     lat: 48.8566,
     lng: 2.3522,
   };
+
   const [newCenterMap, setNewCenterMap] = useState(defaultCenterMap);
+  const [userCenterMap, setUserCenterMap] = useState({ lat: 0, lng: 0 });
+  const [userLocationShared, setUserLocationShared] = useState(false);
+  const [trackingId, setTrackingId] = useState(null);
+
   const value = {
     defaultCenterMap,
     newCenterMap,
     setNewCenterMap,
+    userCenterMap,
+    setUserCenterMap,
+    userLocationShared,
+    setUserLocationShared,
+    trackingId,
+    setTrackingId,
   };
 
   return (
