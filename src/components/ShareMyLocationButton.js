@@ -27,9 +27,9 @@ const ShareMyLocationButton = ({ disabled = false }) => {
   const handleError = () => setUserCenterMap(defaultCenterMap);
 
   const handleShareLiveLocation = () => {
-    if (navigator?.geolocation) {
+    if (navigator.geolocation) {
       if (trackingId === null) {
-        const newTrackingId = navigator?.geolocation?.watchPosition(
+        const newTrackingId = navigator.geolocation.watchPosition(
           handleSuccess,
           handleError,
         );

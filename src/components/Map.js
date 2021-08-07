@@ -50,7 +50,7 @@ export const Map = ({
         center={centerMap}
         onDragEnd={(event) => handleCenterMoved(event)}
       >
-        {navigator?.geolocation && userLocationShared ? (
+        {navigator.geolocation && userLocationShared ? (
           <UserLocationPin lat={userCenterMap.lat} lng={userCenterMap.lng} />
         ) : null}
         {locations?.length > 0 && loaded
