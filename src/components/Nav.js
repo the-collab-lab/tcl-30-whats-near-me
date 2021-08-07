@@ -7,7 +7,7 @@ import ShareMyLocationButton from './ShareMyLocationButton';
 const Nav = () => {
   const valueCenterMap = useContext(MapCenterContext);
   const { trackingId, userLocationShared } = valueCenterMap;
-  const wasWatchingLocation = trackingId !== 0;
+  const wasWatchingLocation = trackingId !== null;
 
   return (
     <footer>
