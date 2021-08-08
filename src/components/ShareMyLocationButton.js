@@ -28,13 +28,13 @@ const ShareMyLocationButton = () => {
 
   const handleShareLiveLocation = () => {
     if (navigator.geolocation) {
-      if (trackingId === null) {
-        const newTrackingId = navigator.geolocation.watchPosition(
-          handleSuccess,
-          handleError,
-        );
-        setTrackingId(newTrackingId);
-      }
+      const trackingId = navigator.geolocation.watchPosition(
+        handleSuccess,
+        handleError,
+      );
+
+      setTrackingId(trackingId);
+      setUserLocationShared(true);
     }
   };
 
