@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
 
-const ShareMyLocationButton = ({ disabled = false }) => {
+const ShareMyLocationButton = () => {
   const valueCenterMap = useContext(MapCenterContext);
   const {
     defaultCenterMap,
@@ -38,10 +38,23 @@ const ShareMyLocationButton = ({ disabled = false }) => {
     }
   };
 
+  const handleStopSharing = () => {
+    if (userLocationShared && trackingId) {
+      setTrackingId(navigator.geolocation.clearWatch(trackingId));
+    }
+    setUserLocationShared(false);
+    setNewCenterMap(defaultCenterMap);
+  };
+  console.log('---', trackingId);
   return (
-    <button onClick={handleShareLiveLocation} disabled={disabled}>
-      Share My Location
-    </button>
+    <>
+      <button onClick={handleShareLiveLocation} disabled={userLocationShared}>
+        Share My Location
+      </button>
+      {userLocationShared ? (
+        <button onClick={handleStopSharing}>Stop Sharing Location</button>
+      ) : null}
+    </>
   );
 };
 

@@ -28,7 +28,7 @@ const Nav = () => {
             <NavLink to="/help">Help</NavLink>
           </li>
           <li>
-            <ShareMyLocationButton disabled={wasWatchingLocation} />
+            <ShareMyLocationButton />
           </li>
           <li>
             <FlyToMeButton disabled={!userLocationShared} />
