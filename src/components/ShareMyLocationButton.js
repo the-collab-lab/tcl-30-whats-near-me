@@ -1,16 +1,15 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 
-// import useRef as well
 import { MapCenterContext } from '../context/MapCenterContext';
 
 const ShareMyLocationButton = ({ disabled = false }) => {
   const valueCenterMap = useContext(MapCenterContext);
+  const sharingLocation = useRef(false);
   const {
     defaultCenterMap,
     setUserCenterMap,
     setNewCenterMap,
     setTrackingId,
-    userLocationShared,
     setUserLocationShared,
     trackingId,
   } = valueCenterMap;
@@ -21,9 +20,10 @@ const ShareMyLocationButton = ({ disabled = false }) => {
     const newMapCenter = { lat, lng };
     setUserCenterMap(newMapCenter);
 
-    if (!userLocationShared) {
+    if (!sharingLocation.current) {
       setNewCenterMap(newMapCenter);
-      setUserLocationShared(true);
+      sharingLocation.current = true;
+      setUserLocationShared(sharingLocation.current);
     }
   };
   const handleError = () => setUserCenterMap(defaultCenterMap);
