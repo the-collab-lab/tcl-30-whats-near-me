@@ -34,7 +34,6 @@ const ShareMyLocationButton = () => {
       );
 
       setTrackingId(trackingId);
-      setUserLocationShared(true);
     }
   };
 
