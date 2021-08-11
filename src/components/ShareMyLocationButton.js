@@ -48,17 +48,13 @@ const ShareMyLocationButton = () => {
     setUserLocationShared(false);
     setNewCenterMap(defaultCenterMap);
   };
-  console.log('---', trackingId);
+
   return (
-    <div>
-      <button
-        onClick={
-          userLocationShared ? handleStopSharing : handleShareLiveLocation
-        }
-      >
-        {buttonText}
-      </button>
-    </div>
+    <button
+      onClick={userLocationShared ? handleStopSharing : handleShareLiveLocation}
+    >
+      {buttonText}
+    </button>
   );
 };
 
