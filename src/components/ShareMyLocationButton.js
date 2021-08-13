@@ -29,21 +29,36 @@ const ShareMyLocationButton = ({ disabled = false }) => {
 
   const handleShareLiveLocation = () => {
     if (navigator.geolocation) {
-      if (trackingId === null) {
-        const trackingId = navigator.geolocation.watchPosition(
-          handleSuccess,
-          handleError,
-        );
+      const trackingId = navigator.geolocation.watchPosition(
+        handleSuccess,
+        handleError,
+      );
 
-        setTrackingId(trackingId);
-      }
+      setTrackingId(trackingId);
+      setUserLocationShared(sharingLocation.current);
     }
   };
 
+  const handleStopSharing = () => {
+    if (sharingLocation.current && trackingId) {
+      setTrackingId(navigator.geolocation.clearWatch(trackingId));
+    }
+    setUserLocationShared(false);
+    setNewCenterMap(defaultCenterMap);
+  };
+
   return (
-    <button onClick={handleShareLiveLocation} disabled={disabled}>
-      Share My Location
-    </button>
+    <>
+      <button
+        onClick={handleShareLiveLocation}
+        disabled={sharingLocation.current}
+      >
+        Share My Location
+      </button>
+      {sharingLocation.current ? (
+        <button onClick={handleStopSharing}>Stop Sharing Location</button>
+      ) : null}
+    </>
   );
 };
 
