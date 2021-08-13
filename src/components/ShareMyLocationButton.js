@@ -1,7 +1,7 @@
 import { useContext, useRef } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
 
-const ShareMyLocationButton = ({ disabled = false }) => {
+const ShareMyLocationButton = () => {
   const valueCenterMap = useContext(MapCenterContext);
   const sharingLocation = useRef(false);
   const {
@@ -9,6 +9,7 @@ const ShareMyLocationButton = ({ disabled = false }) => {
     setUserCenterMap,
     setNewCenterMap,
     setTrackingId,
+    userLocationShared,
     setUserLocationShared,
     trackingId,
   } = valueCenterMap;
@@ -27,6 +28,10 @@ const ShareMyLocationButton = ({ disabled = false }) => {
   };
   const handleError = () => setUserCenterMap(defaultCenterMap);
 
+  const buttonText = userLocationShared
+    ? 'Stop Sharing Location'
+    : 'Share My Location';
+
   const handleShareLiveLocation = () => {
     if (navigator.geolocation) {
       const trackingId = navigator.geolocation.watchPosition(
@@ -35,12 +40,11 @@ const ShareMyLocationButton = ({ disabled = false }) => {
       );
 
       setTrackingId(trackingId);
-      setUserLocationShared(sharingLocation.current);
     }
   };
 
   const handleStopSharing = () => {
-    if (sharingLocation.current && trackingId) {
+    if (userLocationShared && trackingId) {
       setTrackingId(navigator.geolocation.clearWatch(trackingId));
     }
     setUserLocationShared(false);
@@ -48,17 +52,11 @@ const ShareMyLocationButton = ({ disabled = false }) => {
   };
 
   return (
-    <>
-      <button
-        onClick={handleShareLiveLocation}
-        disabled={sharingLocation.current}
-      >
-        Share My Location
-      </button>
-      {sharingLocation.current ? (
-        <button onClick={handleStopSharing}>Stop Sharing Location</button>
-      ) : null}
-    </>
+    <button
+      onClick={userLocationShared ? handleStopSharing : handleShareLiveLocation}
+    >
+      {buttonText}
+    </button>
   );
 };
 
