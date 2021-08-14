@@ -48,6 +48,7 @@ const ShareMyLocationButton = () => {
       setTrackingId(navigator.geolocation.clearWatch(trackingId));
     }
     setUserLocationShared(false);
+    sharingLocation.current = false;
     setNewCenterMap(defaultCenterMap);
   };
 
