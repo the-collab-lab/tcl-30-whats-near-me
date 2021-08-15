@@ -48,7 +48,7 @@ export const SearchForm = () => {
         name="query"
         value={query}
         onChange={handleQuery}
-        placeholder="Search place place or address"
+        placeholder="Search place name or address"
         maxLength="20"
       />
       <button type="submit" className="search__button">
