@@ -504,15 +504,13 @@ button:enabled:hover {
   text-align: center;
   line-height: 38px;
   cursor: pointer;
+  border-radius: 50%;
 }
 
-.thumb.active {
-  background-color: grey;
-}
 .track {
   position: relative;
   top: 20px;
-  height: 10px;
+  height: 5px;
   background: #ddd;
 }
 
