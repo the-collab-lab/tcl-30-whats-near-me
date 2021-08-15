@@ -469,3 +469,53 @@ button:enabled:hover {
   color: #1c2334;
   text-decoration: underline;
 }
+
+/*--------------------------------------------------------------------------*\
+  SLIDER
+\*--------------------------------------------------------------------------*/
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.slider + * {
+  margin-top: 1rem;
+}
+
+.thumb {
+  box-sizing: border-box;
+  top: 1px;
+  width: 50px;
+  height: 48px;
+  border: 5px solid gray;
+  background-color: black;
+  color: white;
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 38px;
+  cursor: pointer;
+}
+
+.thumb.active {
+  background-color: grey;
+}
+.track {
+  position: relative;
+  top: 20px;
+  height: 10px;
+  background: #ddd;
+}
+
+.track-1 {
+  background: #1c2334;
+}

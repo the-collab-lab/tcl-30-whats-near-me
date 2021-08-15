@@ -33,8 +33,7 @@ export const Map = ({
   const handleCenterMoved = (event) => {
     const lat = event?.center?.lat();
     const lng = event?.center?.lng();
-    const newMapCenter = { lat, lng };
-    setNewCenterMap(newMapCenter);
+    setNewCenterMap({ lat, lng, isDragged: true });
   };
 
   return (
