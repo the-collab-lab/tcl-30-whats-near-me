@@ -471,8 +471,23 @@ button:enabled:hover {
 }
 
 /*--------------------------------------------------------------------------*\
-  SLIDER
+  Settings
 \*--------------------------------------------------------------------------*/
+.settings__title {
+  text-align: center;
+}
+
+.settings__title + * {
+  margin-top: 1rem;
+}
+
+.settings__explanation {
+  text-align: center;
+}
+
+.settings__options {
+  text-align: center;
+}
 
 .slider-container {
   display: flex;
@@ -489,7 +504,7 @@ button:enabled:hover {
 }
 
 .slider + * {
-  margin-top: 1rem;
+  margin-top: 5rem;
 }
 
 .thumb {

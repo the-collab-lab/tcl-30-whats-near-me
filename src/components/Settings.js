@@ -13,13 +13,21 @@ const Settings = () => {
 
   return (
     <>
-      <h1>Settings</h1>
+      <div className="settings">
+        <h3 className="settings__title">
+          Adjust how frequently the map will refresh with new locations
+        </h3>
+        <p className="settings__explanation">
+          Recommended settings are based on expected speed of transportation
+        </p>
+        <ul className="settings__options">
+          <li>- Car/Train: 0 seconds</li>
+          <li>- Bicycle: 15 seconds</li>
+          <li>- Walking: 30 seconds</li>
+        </ul>
+      </div>
       <div className="view__content">
         <div className="slider-container">
-          <h3>
-            Adjust how frequently the map will refresh with new locations.
-          </h3>
-
           <ReactSlider
             className="slider"
             thumbClassName="thumb"
@@ -33,14 +41,6 @@ const Settings = () => {
               <div {...props}>{state.valueNow}</div>
             )}
           />
-          <p>
-            Recommended settings are based on expected speed of transportation:
-          </p>
-          <ul>
-            <li>- Car or Train: 0 seconds</li>
-            <li>- Bicycle: 15 seconds</li>
-            <li>- Walking: 30 seconds</li>
-          </ul>
         </div>
       </div>
     </>
