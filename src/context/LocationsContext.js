@@ -7,7 +7,7 @@ export const LocationsContext = createContext();
 const Locations = ({ children }) => {
   const valueMapCenter = useContext(MapCenterContext);
   const { newCenterMap } = valueMapCenter;
-  const [wait, setWait] = useState(30);
+  const [wait, setWait] = useState(0);
   const { isFetching, locations, status, error } = useLocations(
     newCenterMap,
     wait * 1000,
