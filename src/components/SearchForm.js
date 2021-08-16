@@ -28,16 +28,12 @@ export const SearchForm = () => {
           alert('No matching results');
         } else {
           const firstResult = results[0];
-          console.log({ firstResult });
           const coordinates = firstResult?.geometry?.location;
           const lat = coordinates.lat();
           const lng = coordinates.lng();
           const newMapCenter = { lat, lng };
-          console.log({ newMapCenter });
           setNewCenterMap(newMapCenter);
         }
-      } else {
-        console.error({ status });
       }
     });
   };
