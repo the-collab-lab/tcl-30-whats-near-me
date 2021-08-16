@@ -23,17 +23,17 @@ export const SearchForm = () => {
     var service = new maps.places.PlacesService(map);
 
     service.findPlaceFromQuery(request, function (results, status) {
+      console.log({ status });
+      if (status === maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+        alert('No matching results');
+      }
       if (status === maps.places.PlacesServiceStatus.OK) {
-        if (results.length === 0) {
-          alert('No matching results');
-        } else {
-          const firstResult = results[0];
-          const coordinates = firstResult?.geometry?.location;
-          const lat = coordinates.lat();
-          const lng = coordinates.lng();
-          const newMapCenter = { lat, lng };
-          setNewCenterMap(newMapCenter);
-        }
+        const firstResult = results[0];
+        const coordinates = firstResult?.geometry?.location;
+        const lat = coordinates.lat();
+        const lng = coordinates.lng();
+        const newMapCenter = { lat, lng };
+        setNewCenterMap(newMapCenter);
       }
     });
   };
