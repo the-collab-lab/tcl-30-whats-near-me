@@ -23,15 +23,20 @@ export const SearchForm = () => {
     var service = new maps.places.PlacesService(map);
 
     service.findPlaceFromQuery(request, function (results, status) {
-      console.log({ status });
       if (status === maps.places.PlacesServiceStatus.OK) {
-        // console.log({ results })
         if (results.length === 0) {
           alert('No matching results');
         } else {
           const firstResult = results[0];
-          setNewCenterMap(firstResult?.geometry?.location);
+          console.log({ firstResult });
+          const coordinates = firstResult?.geometry?.location;
+          const lat = coordinates.lat;
+          const lng = coordinates.lng;
+          const newMapCenter = { lat, lng };
+          setNewCenterMap(newMapCenter);
         }
+      } else {
+        console.error({ status });
       }
     });
   };
