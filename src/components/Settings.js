@@ -16,6 +16,10 @@ const Settings = () => {
       <h1 className="list__title">Settings</h1>
       <div className="view__content">
         <div className="slider-container">
+          <h3>
+            Adjust how frequently the map will refresh with new locations.
+          </h3>
+
           <ReactSlider
             className="slider"
             thumbClassName="thumb"
@@ -29,7 +33,14 @@ const Settings = () => {
               <div {...props}>{state.valueNow}</div>
             )}
           />
-          <p>Set how frequently the app fetches new places</p>
+          <p>
+            Recommended settings are based on expected speed of transportation:
+          </p>
+          <ul>
+            <li>- Car or Train: 0 seconds</li>
+            <li>- Bicycle: 15 seconds</li>
+            <li>- Walking: 30 seconds</li>
+          </ul>
         </div>
       </div>
     </>
