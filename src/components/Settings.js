@@ -13,7 +13,7 @@ const Settings = () => {
 
   return (
     <>
-      <h1 className="list__title">Settings</h1>
+      <h1>Settings</h1>
       <div className="view__content">
         <div className="slider-container">
           <h3>
