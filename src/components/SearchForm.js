@@ -51,7 +51,7 @@ export const SearchForm = () => {
         value={query}
         onChange={handleQuery}
         placeholder="Search place name or address"
-        maxLength="20"
+        maxLength="40"
       />
       <button type="submit" className="search__button">
         <img src={planetSearch} alt="search icon" className="search__icon" />
