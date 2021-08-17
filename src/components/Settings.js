@@ -32,6 +32,7 @@ const Settings = () => {
             className="slider"
             thumbClassName="thumb"
             trackClassName="track"
+            ariaLabel={['Thumb']}
             min={0}
             max={30}
             step={5}

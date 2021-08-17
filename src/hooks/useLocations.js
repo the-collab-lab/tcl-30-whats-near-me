@@ -5,7 +5,7 @@ export const useLocations = ({ lat, lng, isDragged }, interval) => {
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
-  const ref = useRef(0);
+  const timeRef = useRef(0);
 
   useEffect(() => {
     // Abort fetch
@@ -16,7 +16,7 @@ export const useLocations = ({ lat, lng, isDragged }, interval) => {
     const baseURL = 'https://segdeha.com/api/nearby.php';
     const completeURL = lat && lng && `${baseURL}?lat=${lat}&lng=${lng}`;
 
-    const fetchLocations = (lat, lng) => {
+    const fetchLocations = () => {
       setStatus('loading');
       fetch(completeURL, { signal })
         .then((response) => {
@@ -43,18 +43,18 @@ export const useLocations = ({ lat, lng, isDragged }, interval) => {
     };
 
     if (isDragged) {
-      fetchLocations(lat, lng);
+      fetchLocations();
       return;
     }
 
-    if (Date.now() >= ref.current + interval) {
-      ref.current = Date.now();
-      fetchLocations(lat, lng);
+    if (Date.now() >= timeRef.current + interval) {
+      timeRef.current = Date.now();
+      fetchLocations();
     } else {
       const id = setTimeout(() => {
-        ref.current = Date.now();
-        fetchLocations(lat, lng);
-      }, interval - (Date.now() - ref.current));
+        timeRef.current = Date.now();
+        fetchLocations();
+      }, interval - (Date.now() - timeRef.current));
       return () => clearTimeout(id);
     }
   }, [lat, lng, interval, isDragged]);
