@@ -12,7 +12,7 @@ export const Map = ({
   defaultCenterMap,
   centerMap,
   locations = [],
-  zoom = 12,
+  zoom = 14,
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [locationDetails, setLocationDetails] = useState(null);

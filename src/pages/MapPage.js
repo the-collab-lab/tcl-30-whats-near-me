@@ -25,7 +25,7 @@ const MapPage = () => {
           defaultCenterMap={defaultCenterMap}
           centerMap={newCenterMap}
           locations={locations}
-          zoom={12}
+          zoom={14}
         />
       </div>
     </>
