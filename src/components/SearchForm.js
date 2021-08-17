@@ -23,7 +23,6 @@ export const SearchForm = () => {
     var service = new maps.places.PlacesService(map);
 
     service.findPlaceFromQuery(request, function (results, status) {
-      console.log({ status });
       if (status === maps.places.PlacesServiceStatus.REQUEST_DENIED) {
         alert(
           'We are so sorry! Places API is not enabled. Please try again later.',
