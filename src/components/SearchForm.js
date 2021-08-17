@@ -24,6 +24,11 @@ export const SearchForm = () => {
 
     service.findPlaceFromQuery(request, function (results, status) {
       console.log({ status });
+      if (status === maps.places.PlacesServiceStatus.REQUEST_DENIED) {
+        alert(
+          'We are so sorry! Places API is not enabled. Please try again later.',
+        );
+      }
       if (status === maps.places.PlacesServiceStatus.ZERO_RESULTS) {
         alert('No matching results');
       }
@@ -39,23 +44,31 @@ export const SearchForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="search">
-      <label htmlFor="query" className="search__label">
-        Place or address:
-      </label>
-      <input
-        className="search__input"
-        type="search"
-        id="query"
-        name="query"
-        value={query}
-        onChange={handleQuery}
-        placeholder="Search place name or address"
-        maxLength="40"
-      />
-      <button type="submit" className="search__button">
-        <img src={planetSearch} alt="search icon" className="search__icon" />
-      </button>
-    </form>
+    <>
+      {maps !== null ? (
+        <form onSubmit={handleSubmit} className="search">
+          <label htmlFor="query" className="search__label">
+            Place or address:
+          </label>
+          <input
+            className="search__input"
+            type="search"
+            id="query"
+            name="query"
+            value={query}
+            onChange={handleQuery}
+            placeholder="Search place name or address"
+            maxLength="40"
+          />
+          <button type="submit" className="search__button">
+            <img
+              src={planetSearch}
+              alt="search icon"
+              className="search__icon"
+            />
+          </button>
+        </form>
+      ) : null}
+    </>
   );
 };
