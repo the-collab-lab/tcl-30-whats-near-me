@@ -58,6 +58,7 @@ export const SearchForm = () => {
             onChange={handleQuery}
             placeholder="Search place name or address"
             maxLength="40"
+            required
           />
           <button type="submit" className="search__button">
             <img
