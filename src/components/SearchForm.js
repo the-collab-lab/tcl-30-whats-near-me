@@ -15,12 +15,12 @@ export const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    var request = {
+    const request = {
       query,
       fields: ['name', 'geometry'],
     };
 
-    var service = new maps.places.PlacesService(map);
+    const service = new maps.places.PlacesService(map);
 
     service.findPlaceFromQuery(request, function (results, status) {
       if (status === maps.places.PlacesServiceStatus.REQUEST_DENIED) {
