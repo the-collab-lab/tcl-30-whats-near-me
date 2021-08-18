@@ -482,7 +482,6 @@ button:enabled:hover {
   background-color: white;
   border-radius: 0.5rem;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   height: 2.5rem;
   padding: 0 0.5rem;
