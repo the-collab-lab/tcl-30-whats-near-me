@@ -19,10 +19,12 @@ export const Map = ({
   const valueCenterMap = useContext(MapCenterContext);
   const valueGoogleMapsApi = useContext(GoogleMapsContext);
   const { setNewCenterMap, userLocationShared, userCenterMap } = valueCenterMap;
+
   const { setMap, setMaps } = valueGoogleMapsApi;
 
   const handleApiLoaded = (map, maps) => {
     setLoaded(true);
+
     setMap(map);
     setMaps(maps);
   };
@@ -45,7 +47,7 @@ export const Map = ({
     <div className="map">
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: 'AIzaSyBVolVQlm384nMSDHcDOVLfyqrahoPVYl4',
+          key: 'AIzaSyCbfV0IAdkkGv-9mmuAkUJNzCPPfGRO6v0',
           libraries: ['places'],
         }}
         defaultCenter={defaultCenterMap}
