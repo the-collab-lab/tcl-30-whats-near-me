@@ -23,21 +23,31 @@ export const SearchForm = () => {
     const service = new maps.places.PlacesService(map);
 
     service.findPlaceFromQuery(request, function (results, status) {
-      if (status === maps.places.PlacesServiceStatus.REQUEST_DENIED) {
-        alert(
-          'We are so sorry! Places API is not enabled. Please try again later.',
-        );
-      }
-      if (status === maps.places.PlacesServiceStatus.ZERO_RESULTS) {
-        alert('No matching results');
-      }
-      if (status === maps.places.PlacesServiceStatus.OK) {
-        const firstResult = results[0];
-        const coordinates = firstResult?.geometry?.location;
-        const lat = coordinates.lat();
-        const lng = coordinates.lng();
-        const newMapCenter = { lat, lng };
-        setNewCenterMap(newMapCenter);
+      const { REQUEST_DENIED, ZERO_RESULTS, OK } =
+        maps.places.PlacesServiceStatus;
+
+      switch (status) {
+        case REQUEST_DENIED:
+          alert(
+            'We are so sorry! Places API is not enabled. Please try again later.',
+          );
+          break;
+
+        case ZERO_RESULTS:
+          alert('No matching results');
+          break;
+
+        case OK:
+          const coordinates = results[0]?.geometry?.location;
+          const lat = coordinates.lat();
+          const lng = coordinates.lng();
+          const newMapCenter = { lat, lng };
+          setNewCenterMap(newMapCenter);
+          break;
+
+        default:
+          console.log(status);
+          break;
       }
     });
   };
