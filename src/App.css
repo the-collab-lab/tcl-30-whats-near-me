@@ -112,7 +112,13 @@ main > h1 + * {
 }
 
 .view__header {
+  background-color: rgb(64, 138, 250);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   position: relative;
+  padding: 0.5rem;
 }
 
 .map {
@@ -468,4 +474,47 @@ button:enabled:hover {
 .dialog__body__link {
   color: #1c2334;
   text-decoration: underline;
+}
+
+/* Search Form */
+.search {
+  align-items: center;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  position: relative;
+}
+
+.search__button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+}
+
+.search__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.search__input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.search__label {
+  background-color: #fff;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  color: #000;
+  left: 0;
+  font-size: 0.9rem;
+  padding: 0 0.25rem;
+  position: absolute;
+  top: -1rem;
+  width: 100%;
 }

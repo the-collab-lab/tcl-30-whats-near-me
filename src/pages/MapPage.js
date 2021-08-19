@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
 import { Map } from '../components/Map';
+import { SearchForm } from '../components/SearchForm';
 import { LocationsContext } from '../context/LocationsContext';
 import Spinner from '../components/Spinner';
 import ErrorMessage from '../components/ErrorMessage';
@@ -16,6 +17,7 @@ const MapPage = () => {
       <header className="view__header">
         <h1>What's Near Me?</h1>
         {status === 'loading' ? <Spinner /> : null}
+        <SearchForm />
       </header>
       <div className="view__content">
         {status === 'error' ? <ErrorMessage error={error} /> : null}
@@ -23,7 +25,7 @@ const MapPage = () => {
           defaultCenterMap={defaultCenterMap}
           centerMap={newCenterMap}
           locations={locations}
-          zoom={16}
+          zoom={14}
         />
       </div>
     </>

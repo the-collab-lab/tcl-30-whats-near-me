@@ -6,20 +6,25 @@ import Pin from './Pin';
 import UserLocationPin from './UserLocationPin';
 import DialogBody from './DialogBody';
 import { MapCenterContext } from '../context/MapCenterContext';
+import { GoogleMapsContext } from '../context/GoogleMapsContext';
 
 export const Map = ({
   defaultCenterMap,
   centerMap,
   locations = [],
-  zoom = 16,
+  zoom = 14,
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [locationDetails, setLocationDetails] = useState(null);
   const valueCenterMap = useContext(MapCenterContext);
+  const valueGoogleMapsApi = useContext(GoogleMapsContext);
   const { setNewCenterMap, userLocationShared, userCenterMap } = valueCenterMap;
+  const { setMap, setMaps } = valueGoogleMapsApi;
 
-  const handleApiLoaded = () => {
+  const handleApiLoaded = (map, maps) => {
     setLoaded(true);
+    setMap(map);
+    setMaps(maps);
   };
 
   const handleClick = (location) => {
@@ -41,12 +46,13 @@ export const Map = ({
     <div className="map">
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: 'AIzaSyCbfV0IAdkkGv-9mmuAkUJNzCPPfGRO6v0',
+          key: 'AIzaSyBVolVQlm384nMSDHcDOVLfyqrahoPVYl4',
+          libraries: ['places'],
         }}
         defaultCenter={defaultCenterMap}
         defaultZoom={zoom}
         yesIWantToUseGoogleMapApiInternals={true}
-        onGoogleApiLoaded={handleApiLoaded}
+        onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         center={centerMap}
         onDragEnd={(event) => handleCenterMoved(event)}
       >
