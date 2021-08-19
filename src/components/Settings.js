@@ -20,9 +20,9 @@ const Settings = () => {
         <h3 className="settings-subheader">
           {userLocationShared
             ? `Adjust how frequently the app
-          refreshes with new locations`
+          refreshes with new data`
             : `Please share your location to adjust how frequently the app
-          refreshes with new locations`}
+          refreshes with new data`}
         </h3>
       </div>
       {userLocationShared ? (
