@@ -17,13 +17,13 @@ const Settings = () => {
     <>
       <div>
         <h1>Settings </h1>
-        <h3 className="settings-subheader">
+        <p className="settings-subheader">
           {userLocationShared
             ? `Adjust how frequently the app
           refreshes with new data`
             : `Please share your location to adjust how frequently the app
           refreshes with new data`}
-        </h3>
+        </p>
       </div>
       {userLocationShared ? (
         <>

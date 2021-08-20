@@ -8,9 +8,10 @@ const Locations = ({ children }) => {
   const valueMapCenter = useContext(MapCenterContext);
   const { newCenterMap } = valueMapCenter;
   const [wait, setWait] = useState(0);
+  const delayInSeconds = wait * 1000;
   const { isFetching, locations, status, error } = useLocations(
     newCenterMap,
-    wait * 1000,
+    delayInSeconds,
   );
 
   const value = {
