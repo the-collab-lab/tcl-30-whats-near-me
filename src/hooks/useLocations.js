@@ -50,6 +50,7 @@ export const useLocations = ({ lat, lng, isDragged }, interval) => {
     if (Date.now() >= timeRef.current + interval) {
       timeRef.current = Date.now();
       fetchLocations();
+      return;
     } else {
       const id = setTimeout(() => {
         timeRef.current = Date.now();
