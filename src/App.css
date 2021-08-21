@@ -112,7 +112,13 @@ main > h1 + * {
 }
 
 .view__header {
+  background-color: rgb(64, 138, 250);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   position: relative;
+  padding: 0.5rem;
 }
 
 .map {
@@ -468,4 +474,123 @@ button:enabled:hover {
 .dialog__body__link {
   color: #1c2334;
   text-decoration: underline;
+}
+
+/*--------------------------------------------------------------------------*\
+  Settings
+\*--------------------------------------------------------------------------*/
+.settings-subheader {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  font-size: 1.33rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  color: #1c2334;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.slider {
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.slider + * {
+  margin-top: 5rem;
+}
+
+.thumb {
+  box-sizing: border-box;
+  top: 1px;
+  width: 50px;
+  height: 48px;
+  border: 5px solid gray;
+  background-color: black;
+  color: white;
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 38px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.track {
+  position: relative;
+  top: 20px;
+  height: 5px;
+  background: #ddd;
+}
+
+.track-1 {
+  background: #1c2334;
+}
+
+.slider__instructions {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #1c2334;
+}
+
+.slider__legend {
+  text-align: center;
+  font-size: 1.2rem;
+}
+/* Search Form */
+.search {
+  align-items: center;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  position: relative;
+}
+
+.search__button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+}
+
+.search__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.search__input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.search__label {
+  background-color: #fff;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  color: #000;
+  left: 0;
+  font-size: 0.9rem;
+  padding: 0 0.25rem;
+  position: absolute;
+  top: -1rem;
+  width: 100%;
+
 }

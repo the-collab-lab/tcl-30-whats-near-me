@@ -5,6 +5,7 @@ const MapCenter = ({ children }) => {
   const defaultCenterMap = {
     lat: 48.8566,
     lng: 2.3522,
+    isDragged: false,
   };
 
   const [newCenterMap, setNewCenterMap] = useState(defaultCenterMap);

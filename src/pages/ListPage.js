@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { LocationsContext } from '../context/LocationsContext';
 import { sortLocationsByDistance } from '../helpers/helpersAPI';
 import { LocationList } from '../components/LocationList';
+import { SearchForm } from '../components/SearchForm';
 import Spinner from '../components/Spinner';
 import ErrorMessage from '../components/ErrorMessage';
 
@@ -12,7 +13,10 @@ const ListPage = () => {
 
   return (
     <>
-      <h1 className="list__title">List</h1>
+      <header className="view__header">
+        <h1 className="list__title">List</h1>
+        <SearchForm />
+      </header>
       <div className="view__content">
         {status === 'loading' ? <Spinner /> : null}
         {status === 'error' ? <ErrorMessage error={error} /> : null}
