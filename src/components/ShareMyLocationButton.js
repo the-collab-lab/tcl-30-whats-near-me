@@ -22,7 +22,7 @@ const ShareMyLocationButton = () => {
     setNewCenterMap({ ...newMapCenter, isDragged: false });
 
     if (!sharingLocation.current) {
-      setNewCenterMap(newMapCenter);
+      setNewCenterMap({ ...newMapCenter, isDragged: false });
       sharingLocation.current = true;
       setUserLocationShared(sharingLocation.current);
     }
