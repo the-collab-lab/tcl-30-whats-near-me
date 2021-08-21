@@ -19,9 +19,10 @@ const ShareMyLocationButton = () => {
     const lng = position.coords.longitude;
     const newMapCenter = { lat, lng };
     setUserCenterMap(newMapCenter);
+    setNewCenterMap({ ...newMapCenter, isDragged: false });
 
     if (!sharingLocation.current) {
-      setNewCenterMap(newMapCenter);
+      setNewCenterMap({ ...newMapCenter, isDragged: false });
       sharingLocation.current = true;
       setUserLocationShared(sharingLocation.current);
     }
@@ -49,7 +50,7 @@ const ShareMyLocationButton = () => {
     }
     setUserLocationShared(false);
     sharingLocation.current = false;
-    setNewCenterMap(defaultCenterMap);
+    setNewCenterMap({ ...defaultCenterMap, isDragged: true });
   };
 
   return (

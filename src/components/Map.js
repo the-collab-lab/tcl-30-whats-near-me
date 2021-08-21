@@ -19,10 +19,12 @@ export const Map = ({
   const valueCenterMap = useContext(MapCenterContext);
   const valueGoogleMapsApi = useContext(GoogleMapsContext);
   const { setNewCenterMap, userLocationShared, userCenterMap } = valueCenterMap;
+
   const { setMap, setMaps } = valueGoogleMapsApi;
 
   const handleApiLoaded = (map, maps) => {
     setLoaded(true);
+
     setMap(map);
     setMaps(maps);
   };
@@ -38,15 +40,14 @@ export const Map = ({
   const handleCenterMoved = (event) => {
     const lat = event?.center?.lat();
     const lng = event?.center?.lng();
-    const newMapCenter = { lat, lng };
-    setNewCenterMap(newMapCenter);
+    setNewCenterMap({ lat, lng, isDragged: true });
   };
 
   return (
     <div className="map">
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: 'AIzaSyBVolVQlm384nMSDHcDOVLfyqrahoPVYl4',
+          key: 'AIzaSyCbfV0IAdkkGv-9mmuAkUJNzCPPfGRO6v0',
           libraries: ['places'],
         }}
         defaultCenter={defaultCenterMap}
