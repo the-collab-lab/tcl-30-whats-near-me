@@ -608,3 +608,17 @@ button:enabled:hover {
   top: -1rem;
   width: 100%;
 }
+
+/* Icon */
+.icon {
+  fill: var(--primary-color);
+}
+
+.icon:hover {
+  fill: var(--secondary-color);
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}

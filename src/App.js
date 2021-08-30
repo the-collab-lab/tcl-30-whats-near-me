@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import MapPage from './pages/MapPage';
 
 import './App.css';
+import { UIComponentsPage } from './pages/UIComponentsPage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
                   <Route path="/list" component={ListPage} />
                   <Route path="/settings" component={Settings} />
                   <Route path="/help" component={Help} />
+                  <Route path="/ui" component={UIComponentsPage} />
                 </Switch>
               </main>
               <Footer />
