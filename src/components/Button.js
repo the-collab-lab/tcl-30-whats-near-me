@@ -5,19 +5,21 @@ export function Button({
   disabled = false,
   text,
   href,
-  children,
   onClick,
+  icon,
 }) {
+  const ButtonIcon = icon;
+
   return (
     <>
       {href ? (
         <NavLink to={href} className={className} exact>
-          {children}
+          <ButtonIcon className="icon" />
           {text ? <span className="btn__text">{text}</span> : null}
         </NavLink>
       ) : (
         <button className="btn" onClick={onClick} disabled={disabled}>
-          {children}
+          <ButtonIcon className="icon" />
         </button>
       )}
     </>
