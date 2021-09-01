@@ -1,3 +1,4 @@
+import { MEASUREMENTS } from '../helpers/helpersAPI';
 import { Location } from './Location';
 
 export const LocationList = ({ locations = [] }) => {
@@ -6,7 +7,11 @@ export const LocationList = ({ locations = [] }) => {
   return (
     <ul className="list__locations">
       {locations.map((location) => (
-        <Location key={location.pageid} location={location} />
+        <Location
+          key={location.pageid}
+          location={location}
+          measurement={MEASUREMENTS.METER}
+        />
       ))}
     </ul>
   );
