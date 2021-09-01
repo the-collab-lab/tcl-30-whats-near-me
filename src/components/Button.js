@@ -2,20 +2,21 @@ import { NavLink } from 'react-router-dom';
 
 export function Button({
   className = 'btn',
-  text = '',
-  href = '',
+  disabled = false,
+  text,
+  href,
   children,
   onClick,
 }) {
   return (
     <>
-      {href !== '' ? (
+      {href ? (
         <NavLink to={href} className={className} exact>
           {children}
-          {text !== '' ? <span className="btn__text">{text}</span> : null}
+          {text ? <span className="btn__text">{text}</span> : null}
         </NavLink>
       ) : (
-        <button className="btn" onClick={onClick}>
+        <button className="btn" onClick={onClick} disabled={disabled}>
           {children}
         </button>
       )}
