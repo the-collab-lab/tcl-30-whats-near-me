@@ -12,7 +12,6 @@ import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
 import { ReactComponent as HelpIcon } from '../assets/help-icon.svg';
 import { ButtonIcon } from '../components/buttons/ButtonIcon';
 import { ButtonLink } from '../components/buttons/ButtonLink';
-import { NavLink } from 'react-router-dom';
 
 export const UIComponentsPage = () => {
   return (
