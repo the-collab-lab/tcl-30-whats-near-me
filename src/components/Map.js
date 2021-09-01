@@ -7,6 +7,7 @@ import UserLocationPin from './UserLocationPin';
 import DialogBody from './DialogBody';
 import { MapCenterContext } from '../context/MapCenterContext';
 import { GoogleMapsContext } from '../context/GoogleMapsContext';
+import { MEASUREMENTS } from '../helpers/helpersAPI';
 
 export const Map = ({
   defaultCenterMap,
@@ -88,7 +89,11 @@ export const Map = ({
           aria-label="Location details"
           onDismiss={handleClose}
         >
-          <DialogBody onClick={handleClose} locationDetails={locationDetails} />
+          <DialogBody
+            onClick={handleClose}
+            locationDetails={locationDetails}
+            measurement={MEASUREMENTS.METER}
+          />
         </Dialog>
       ) : null}
     </div>
