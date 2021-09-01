@@ -1,21 +1,21 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { Button } from './Button';
+import '../App.css';
 
 const Nav = () => (
   <nav>
-    <ul className="nav">
+    <ul className="btn">
       <li>
-        <NavLink exact to="/">
-          Map
-        </NavLink>
+        <Button href="/" term="Map" />
       </li>
       <li>
-        <NavLink to="/list">List</NavLink>
+        <Button href="/list" term="List" />
       </li>
       <li>
-        <NavLink to="/settings">Settings</NavLink>
+        <Button href="/settings" term="Settings" />
       </li>
       <li>
-        <NavLink to="/help">Help</NavLink>
+        <Button href="/help" term="Help" />
       </li>
     </ul>
   </nav>
