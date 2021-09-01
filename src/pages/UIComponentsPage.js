@@ -36,7 +36,7 @@ export const UIComponentsPage = () => {
       </section>
       <br />
       <section>
-        <h2>Buttons (as Buttons)</h2>
+        <h2>Icons (as Buttons)</h2>
         <br />
         <div className="icons">
           <Button onClick={() => alert('Share location')}>
