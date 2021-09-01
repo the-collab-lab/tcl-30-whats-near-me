@@ -18,9 +18,9 @@ const sortLocationsByDistance = (locations = []) => {
 };
 
 const MEASUREMENTS = {
-  METER: 'mts.',
-  KILOMETERS: 'kms.',
-  MILES: 'miles.',
+  METER: 'm',
+  KILOMETERS: 'km',
+  MILES: 'miles',
 };
 
 const convertDistanceMts = (distanceInMts = 0, measurement = 'miles') => {
