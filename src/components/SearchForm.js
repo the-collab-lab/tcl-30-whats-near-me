@@ -1,13 +1,12 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { GoogleMapsContext } from '../context/GoogleMapsContext';
 import { MapCenterContext } from '../context/MapCenterContext';
 import planetSearch from '../assets/search-location-solid.svg';
 
 export const SearchForm = () => {
-  const [query, setQuery] = useState('');
   const valueGoogleMapsAPI = useContext(GoogleMapsContext);
   const valueMapCenter = useContext(MapCenterContext);
-  const { map, maps } = valueGoogleMapsAPI;
+  const { map, maps, query, setQuery } = valueGoogleMapsAPI;
   const { setNewCenterMap } = valueMapCenter;
 
   const handleQuery = (e) => setQuery(e.target.value);
