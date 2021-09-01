@@ -39,18 +39,16 @@ export const UIComponentsPage = () => {
         <h2>Icons (as Buttons)</h2>
         <br />
         <div className="icons">
-          <Button onClick={() => alert('Share location')}>
-            <ShareLocationIcon className="icon" />
-          </Button>
-          <Button onClick={() => alert('Fly to me')}>
-            <FlyToMeIcon className="icon" />
-          </Button>
-          <Button onClick={() => alert('Search place')}>
-            <SearchPlaceIcon className="icon" />
-          </Button>
-          <Button onClick={() => alert('Close')}>
-            <CloseIcon className="icon" />
-          </Button>
+          <Button
+            icon={ShareLocationIcon}
+            onClick={() => alert('Share location')}
+          />
+          <Button icon={FlyToMeIcon} onClick={() => alert('Fly to me')} />
+          <Button
+            icon={SearchPlaceIcon}
+            onClick={() => alert('Search place')}
+          />
+          <Button icon={CloseIcon} onClick={() => alert('Close')} />
         </div>
       </section>
       <br />
@@ -58,18 +56,20 @@ export const UIComponentsPage = () => {
         <h2>NavLinks (as Buttons)</h2>
         <br />
         <div className="icons">
-          <Button href="/" text="Map" className="btn btn--link">
-            <MapIcon className="icon" />
-          </Button>
-          <Button href="/list" text="List" className="btn btn--link">
-            <ListIcon className="icon" />
-          </Button>
-          <Button href="/settings" className="btn">
-            <SettingsIcon className="icon" />
-          </Button>
-          <Button href="/help" className="btn">
-            <HelpIcon className="icon" />
-          </Button>
+          <Button
+            href="/"
+            text="Map"
+            className="btn btn--link"
+            icon={MapIcon}
+          />
+          <Button
+            href="/list"
+            text="List"
+            className="btn btn--link"
+            icon={ListIcon}
+          />
+          <Button href="/settings" className="btn" icon={SettingsIcon} />
+          <Button href="/help" className="btn" icon={HelpIcon} />
         </div>
       </section>
     </div>
