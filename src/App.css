@@ -182,10 +182,9 @@ nav {
 }
 
 .btn {
-  font-family: var(--font-family-headings);
+  font-family: var(--font-family-body-text);
   background-color: white;
   color: var(--primary-color);
-  font-weight: 800;
   font-size: 1.3rem;
   gap: 1.5rem;
   line-height: 2;
@@ -208,6 +207,7 @@ nav {
 a.active {
   background-color: var(--primary-color);
   color: var(--accent-color);
+  font-weight: 800;
 }
 
 .btn:hover svg {
