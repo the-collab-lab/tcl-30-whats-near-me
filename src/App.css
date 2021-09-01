@@ -10,7 +10,7 @@
   --accent-color: #fff;
   --primary-text-color: #000;
   --secondary-text-color: #626262;
-  --shadows-color: rgb(0 0 0 / 25%);
+  --shadows-color: rgba(168, 168, 168, 0.5);
   --btn-height: 3rem;
   --btn-icon-width: var(--btn-height);
   --btn-link-width: 8.7rem;
