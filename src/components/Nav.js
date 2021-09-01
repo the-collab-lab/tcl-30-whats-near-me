@@ -1,10 +1,9 @@
-import { NavLink, Link } from 'react-router-dom';
 import { Button } from './Button';
 import '../App.css';
 
 const Nav = () => (
   <nav>
-    <ul className="btn">
+    <ul>
       <li>
         <Button href="/" term="Map" />
       </li>
