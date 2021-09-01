@@ -11,6 +11,9 @@
   --primary-text-color: #000;
   --secondary-text-color: #626262;
   --shadows-color: --secondary-text-color;
+  --btn-height: 3rem;
+  --btn-icon-width: var(--btn-height);
+  --btn-link-width: 8.7rem;
 }
 
 /*--------------------------------------------------------------------------*\
@@ -178,24 +181,18 @@ nav {
   text-decoration: none;
 }
 
-a.active {
-  text-decoration: underline;
-}
-
 .btn {
   font-family: var(--font-family-headings);
-  /* background-color: white; */
+  background-color: white;
   color: var(--primary-color);
-  position: relative;
   font-weight: 800;
   font-size: 1.3rem;
   gap: 1.5rem;
   line-height: 2;
-  height: 50px;
+  height: var(--btn-height);
   transition: all 200ms linear;
   border-radius: 4px;
-  width: 140px;
-  letter-spacing: 1px;
+  width: var(--btn-icon-width);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -205,7 +202,29 @@ a.active {
   cursor: pointer;
   box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
   outline: 0;
+}
+
+.btn:hover,
+a.active {
+  /* text-decoration: underline; */
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
+
+.btn:hover svg {
+  fill: var(--accent-color);
+}
+
+.btn--link {
   text-transform: capitalize;
+  letter-spacing: 1px;
+  width: var(--btn-link-width);
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .btn-container {
@@ -457,14 +476,6 @@ a.active {
     min-width: 45vw;
     margin: 10vh auto;
   }
-}
-
-button:enabled:focus {
-  outline-color: #f586ae;
-}
-
-button:enabled:hover {
-  background-color: #f586ae;
 }
 
 .dialog__button {
