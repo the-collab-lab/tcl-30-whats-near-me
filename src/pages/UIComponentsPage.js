@@ -20,18 +20,18 @@ export const UIComponentsPage = () => {
         <h2>Iconography</h2>
         <br />
         <div className="icons">
-          <CarIcon className="icon" />
-          <TrainIcon className="icon" />
-          <BicycleIcon className="icon" />
-          <CloseIcon className="icon" />
-          <FlyToMeIcon className="icon" />
-          <ListIcon className="icon" />
-          <MapIcon className="icon" />
-          <SearchPlaceIcon className="icon" />
-          <ShareLocationIcon className="icon" />
-          <UserLocationIcon className="icon" />
-          <SettingsIcon className="icon" />
-          <HelpIcon className="icon" />
+          <CarIcon />
+          <TrainIcon />
+          <BicycleIcon />
+          <CloseIcon />
+          <FlyToMeIcon />
+          <ListIcon />
+          <MapIcon />
+          <SearchPlaceIcon />
+          <ShareLocationIcon />
+          <UserLocationIcon />
+          <SettingsIcon />
+          <HelpIcon />
         </div>
       </section>
       <br />

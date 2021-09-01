@@ -14,12 +14,12 @@ export function Button({
     <>
       {href ? (
         <NavLink to={href} className={className} exact>
-          <ButtonIcon className="icon" />
+          <ButtonIcon />
           {text ? <span className="btn__text">{text}</span> : null}
         </NavLink>
       ) : (
         <button className="btn" onClick={onClick} disabled={disabled}>
-          <ButtonIcon className="icon" />
+          <ButtonIcon />
         </button>
       )}
     </>
