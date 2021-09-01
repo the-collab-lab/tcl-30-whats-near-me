@@ -182,6 +182,32 @@ a.active {
   text-decoration: underline;
 }
 
+.btn {
+  font-family: var(--font-family-headings);
+  /* background-color: white; */
+  color: var(--primary-color);
+  position: relative;
+  font-weight: 800;
+  font-size: 1.3rem;
+  gap: 1.5rem;
+  line-height: 2;
+  height: 50px;
+  transition: all 200ms linear;
+  border-radius: 4px;
+  width: 140px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+  outline: 0;
+  text-transform: capitalize;
+}
+
 .btn-container {
   display: flex;
   flex-wrap: wrap;
