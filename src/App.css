@@ -206,7 +206,6 @@ nav {
 
 .btn:hover,
 a.active {
-  /* text-decoration: underline; */
   background-color: var(--primary-color);
   color: var(--accent-color);
 }
