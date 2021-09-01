@@ -10,8 +10,7 @@ import { ReactComponent as ShareLocationIcon } from '../assets/share-location-ic
 import { ReactComponent as UserLocationIcon } from '../assets/user-location-icon.svg';
 import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
 import { ReactComponent as HelpIcon } from '../assets/help-icon.svg';
-import { ButtonIcon } from '../components/buttons/ButtonIcon';
-import { ButtonLink } from '../components/buttons/ButtonLink';
+import { Button } from '../components/Button';
 
 export const UIComponentsPage = () => {
   return (
@@ -40,18 +39,18 @@ export const UIComponentsPage = () => {
         <h2>Buttons (as Buttons)</h2>
         <br />
         <div className="icons">
-          <ButtonIcon onClick={() => alert('Share location')}>
+          <Button onClick={() => alert('Share location')}>
             <ShareLocationIcon className="icon" />
-          </ButtonIcon>
-          <ButtonIcon onClick={() => alert('Fly to me')}>
+          </Button>
+          <Button onClick={() => alert('Fly to me')}>
             <FlyToMeIcon className="icon" />
-          </ButtonIcon>
-          <ButtonIcon onClick={() => alert('Search place')}>
+          </Button>
+          <Button onClick={() => alert('Search place')}>
             <SearchPlaceIcon className="icon" />
-          </ButtonIcon>
-          <ButtonIcon onClick={() => alert('Close')}>
+          </Button>
+          <Button onClick={() => alert('Close')}>
             <CloseIcon className="icon" />
-          </ButtonIcon>
+          </Button>
         </div>
       </section>
       <br />
@@ -59,18 +58,18 @@ export const UIComponentsPage = () => {
         <h2>NavLinks (as Buttons)</h2>
         <br />
         <div className="icons">
-          <ButtonLink href="/" text="Map" className="btn btn--link">
+          <Button href="/" text="Map" className="btn btn--link">
             <MapIcon className="icon" />
-          </ButtonLink>
-          <ButtonLink href="/list" text="List" className="btn btn--link">
+          </Button>
+          <Button href="/list" text="List" className="btn btn--link">
             <ListIcon className="icon" />
-          </ButtonLink>
-          <ButtonLink href="/settings" className="btn">
+          </Button>
+          <Button href="/settings" className="btn">
             <SettingsIcon className="icon" />
-          </ButtonLink>
-          <ButtonLink href="/help" className="btn">
+          </Button>
+          <Button href="/help" className="btn">
             <HelpIcon className="icon" />
-          </ButtonLink>
+          </Button>
         </div>
       </section>
     </div>

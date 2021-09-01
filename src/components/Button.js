@@ -1,9 +1,24 @@
 import { NavLink } from 'react-router-dom';
 
-export function Button(props) {
+export function Button({
+  className = 'btn',
+  text = '',
+  href = '',
+  children,
+  onClick,
+}) {
   return (
-    <NavLink to={`${props.href}`} className="btn" exact>
-      {props.term}
-    </NavLink>
+    <>
+      {href !== '' ? (
+        <NavLink to={href} className={className} exact>
+          {children}
+          {text !== '' ? <span className="btn__text">{text}</span> : null}
+        </NavLink>
+      ) : (
+        <button className="btn" onClick={onClick}>
+          {children}
+        </button>
+      )}
+    </>
   );
 }
