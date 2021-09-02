@@ -8,27 +8,97 @@ import { ReactComponent as MapIcon } from '../assets/map-icon.svg';
 import { ReactComponent as SearchPlaceIcon } from '../assets/search-place-icon.svg';
 import { ReactComponent as ShareLocationIcon } from '../assets/share-location-icon.svg';
 import { ReactComponent as UserLocationIcon } from '../assets/user-location-icon.svg';
+import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
+import { ReactComponent as HelpIcon } from '../assets/help-icon.svg';
+import { Button } from '../components/Button';
 
 export const UIComponentsPage = () => {
   return (
-    <div>
+    <div className="view__content">
       <h1>UI Components</h1>
       <section>
         <h2>Iconography</h2>
         <br />
         <div className="icons">
-          <CarIcon className="icon" />
-          <TrainIcon className="icon" />
-          <BicycleIcon className="icon" />
-          <CloseIcon className="icon" />
-          <FlyToMeIcon className="icon" />
-          <ListIcon className="icon" />
-          <MapIcon className="icon" />
-          <SearchPlaceIcon className="icon" />
-          <ShareLocationIcon className="icon" />
-          <UserLocationIcon className="icon" />
+          <CarIcon />
+          <TrainIcon />
+          <BicycleIcon />
+          <CloseIcon />
+          <FlyToMeIcon />
+          <ListIcon />
+          <MapIcon />
+          <SearchPlaceIcon />
+          <ShareLocationIcon />
+          <UserLocationIcon />
+          <SettingsIcon />
+          <HelpIcon />
         </div>
       </section>
+      <br />
+      <section>
+        <h2>Icons (as Buttons)</h2>
+        <br />
+        <div className="icons">
+          <Button
+            className="btn btn__icon"
+            label="Share location"
+            icon={ShareLocationIcon}
+            onClick={() => alert('Share location')}
+          />
+          <Button
+            className="btn btn__icon"
+            label="Fly to me"
+            icon={FlyToMeIcon}
+            onClick={() => alert('Fly to me')}
+          />
+          <Button
+            className="btn btn__icon"
+            label="Search place"
+            icon={SearchPlaceIcon}
+            onClick={() => alert('Search place')}
+          />
+          <Button
+            className="btn btn__icon"
+            label="Close"
+            icon={CloseIcon}
+            onClick={() => alert('Close')}
+          />
+        </div>
+      </section>
+      <br />
+      <section>
+        <h2>NavLinks (as Buttons)</h2>
+        <br />
+        <div className="icons">
+          <Button
+            href="/"
+            text="Map"
+            className="btn btn__link"
+            icon={MapIcon}
+            label="Map button"
+          />
+          <Button
+            href="/list"
+            text="List"
+            className="btn btn__link"
+            icon={ListIcon}
+            label="List button"
+          />
+          <Button
+            href="/settings"
+            className="btn btn__link--icon"
+            icon={SettingsIcon}
+            label="Settings button"
+          />
+          <Button
+            href="/help"
+            className="btn btn__link--icon"
+            icon={HelpIcon}
+            label="Help button"
+          />
+        </div>
+      </section>
+      <br />
     </div>
   );
 };
