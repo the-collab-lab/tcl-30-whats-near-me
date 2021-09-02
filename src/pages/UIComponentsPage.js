@@ -98,6 +98,7 @@ export const UIComponentsPage = () => {
           />
         </div>
       </section>
+      <br />
     </div>
   );
 };
