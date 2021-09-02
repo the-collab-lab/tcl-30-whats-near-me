@@ -40,15 +40,25 @@ export const UIComponentsPage = () => {
         <br />
         <div className="icons">
           <Button
+            label="Share location button"
             icon={ShareLocationIcon}
             onClick={() => alert('Share location')}
           />
-          <Button icon={FlyToMeIcon} onClick={() => alert('Fly to me')} />
           <Button
+            label="Fly to me button"
+            icon={FlyToMeIcon}
+            onClick={() => alert('Fly to me')}
+          />
+          <Button
+            label="Search place button"
             icon={SearchPlaceIcon}
             onClick={() => alert('Search place')}
           />
-          <Button icon={CloseIcon} onClick={() => alert('Close')} />
+          <Button
+            label="Close button"
+            icon={CloseIcon}
+            onClick={() => alert('Close')}
+          />
         </div>
       </section>
       <br />
@@ -61,15 +71,27 @@ export const UIComponentsPage = () => {
             text="Map"
             className="btn btn--link"
             icon={MapIcon}
+            label="Map button"
           />
           <Button
             href="/list"
             text="List"
             className="btn btn--link"
             icon={ListIcon}
+            label="List button"
           />
-          <Button href="/settings" className="btn" icon={SettingsIcon} />
-          <Button href="/help" className="btn" icon={HelpIcon} />
+          <Button
+            href="/settings"
+            className="btn"
+            icon={SettingsIcon}
+            label="Settings button"
+          />
+          <Button
+            href="/help"
+            className="btn"
+            icon={HelpIcon}
+            label="Help button"
+          />
         </div>
       </section>
     </div>
