@@ -11,9 +11,10 @@
   --primary-text-color: #000;
   --secondary-text-color: #626262;
   --shadows-color: rgba(168, 168, 168, 0.5);
+  --icon-height: 3rem;
   --btn-height: 3rem;
   --btn-icon-width: var(--btn-height);
-  --btn-link-width: 8.7rem;
+  --btn-link-width: 8.5rem;
 }
 
 /*--------------------------------------------------------------------------*\
@@ -188,10 +189,8 @@ nav {
   font-size: 1.3rem;
   gap: 1.5rem;
   line-height: 2;
-  height: var(--btn-height);
   transition: all 200ms linear;
   border-radius: 4px;
-  width: var(--btn-icon-width);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -201,6 +200,8 @@ nav {
   cursor: pointer;
   box-shadow: 0.2rem 0.2rem 0 0 var(--shadows-color);
   outline: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .btn:hover,
@@ -216,10 +217,23 @@ a.active {
   fill: var(--accent-color);
 }
 
-.btn--link {
+.btn__icon {
+  height: var(--icon-height);
+  width: var(--icon-height);
+}
+
+.btn__link {
   text-transform: capitalize;
   letter-spacing: 1px;
+  height: var(--icon-height);
   width: var(--btn-link-width);
+}
+
+.btn__link--icon {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  height: var(--icon-height);
+  width: var(--icon-height);
 }
 
 .btn-container {
