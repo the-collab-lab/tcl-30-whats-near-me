@@ -41,25 +41,25 @@ export const UIComponentsPage = () => {
         <div className="icons">
           <Button
             className="btn btn__icon"
-            label="Share location button"
+            label="Share location"
             icon={ShareLocationIcon}
             onClick={() => alert('Share location')}
           />
           <Button
             className="btn btn__icon"
-            label="Fly to me button"
+            label="Fly to me"
             icon={FlyToMeIcon}
             onClick={() => alert('Fly to me')}
           />
           <Button
             className="btn btn__icon"
-            label="Search place button"
+            label="Search place"
             icon={SearchPlaceIcon}
             onClick={() => alert('Search place')}
           />
           <Button
             className="btn btn__icon"
-            label="Close button"
+            label="Close"
             icon={CloseIcon}
             onClick={() => alert('Close')}
           />
