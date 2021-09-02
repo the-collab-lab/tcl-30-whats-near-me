@@ -20,7 +20,7 @@ export function Button({
         </NavLink>
       ) : (
         <button
-          className="btn"
+          className={className}
           onClick={onClick}
           aria-label={label}
           disabled={disabled}
