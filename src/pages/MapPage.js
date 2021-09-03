@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
 import { Map } from '../components/Map';
-import { SearchForm } from '../components/SearchForm';
 import { LocationsContext } from '../context/LocationsContext';
 import Spinner from '../components/Spinner';
 import ErrorMessage from '../components/ErrorMessage';
+import { HeaderSearch } from '../components/HeaderSearch';
 
 const MapPage = () => {
   const valueCenterMap = useContext(MapCenterContext);
@@ -14,11 +14,7 @@ const MapPage = () => {
 
   return (
     <>
-      <header className="view__header">
-        <h1>What's Near Me?</h1>
-        {status === 'loading' ? <Spinner /> : null}
-        <SearchForm />
-      </header>
+      <HeaderSearch>{status === 'loading' ? <Spinner /> : null}</HeaderSearch>
       <div className="view__content">
         {status === 'error' ? <ErrorMessage error={error} /> : null}
         <Map
