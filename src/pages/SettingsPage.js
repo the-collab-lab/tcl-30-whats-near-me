@@ -2,7 +2,9 @@ import React, { useContext } from 'react';
 
 import ReactSlider from 'react-slider';
 import { HeaderNav } from '../components/HeaderNav';
-
+import { ReactComponent as WalkIcon } from '../assets/walk-icon.svg';
+import { ReactComponent as CarIcon } from '../assets/car-icon.svg';
+import { ReactComponent as BicycleIcon } from '../assets/bicycle-icon.svg';
 import { LocationsContext } from '../context/LocationsContext';
 import { MapCenterContext } from '../context/MapCenterContext';
 
@@ -18,18 +20,27 @@ export const SettingsPage = () => {
     <>
       <HeaderNav />
       <div className="view__content">
-        <h1>Settings</h1>
-        <p className="settings-subheader">
-          {userLocationShared
-            ? `Adjust how frequently the app
+        <h1 className="view__title">SETTINGS</h1>
+        <div className="settings-subheader">
+          {userLocationShared ? (
+            <div className="settings__instructions">
+              <p className="settings__instruction">
+                Adjust how frequently the app refreshes with new information.
+              </p>
+              <br />
+              <p className="settings__instruction">
+                This is effective when you are actively sharing your location,
+                and can improve battery life of your device.
+              </p>
+            </div>
+          ) : (
+            `Please share your location to adjust how frequently the app
             refreshes with new data`
-            : `Please share your location to adjust how frequently the app
-            refreshes with new data`}
-        </p>
-      </div>
-      {userLocationShared ? (
-        <>
-          <div className="view__content">
+          )}
+        </div>
+
+        {userLocationShared ? (
+          <>
             <div className="slider-container">
               <ReactSlider
                 className="slider"
@@ -45,19 +56,24 @@ export const SettingsPage = () => {
                   <div {...props}>{state.valueNow}</div>
                 )}
               />
+              <div className="slider__options">
+                <div className="slider__transport">
+                  <CarIcon />
+                  <p className="slider__mode">Car / Train</p>
+                </div>
+                <div className="slider__transport">
+                  <BicycleIcon />
+                  <p className="slider__mode">Bicycle</p>
+                </div>
+                <div className="slider__transport">
+                  <WalkIcon />
+                  <p className="slider__mode">Walk</p>
+                </div>
+              </div>
             </div>
-
-            <p className="slider__instructions">
-              Recommended settings are based on expected speed of transportation
-            </p>
-            <ul className="slider__legend">
-              <li>Car/Train: 0 seconds</li>
-              <li>Bicycle: 15 seconds</li>
-              <li>Walking: 30 seconds</li>
-            </ul>
-          </div>
-        </>
-      ) : null}
+          </>
+        ) : null}
+      </div>
     </>
   );
 };
