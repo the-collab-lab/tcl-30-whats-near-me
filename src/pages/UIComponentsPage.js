@@ -11,6 +11,7 @@ import { ReactComponent as UserLocationIcon } from '../assets/user-location-icon
 import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
 import { ReactComponent as HelpIcon } from '../assets/help-icon.svg';
 import { Button } from '../components/Button';
+import { HeaderSearch } from '../components/HeaderSearch';
 
 export const UIComponentsPage = () => {
   return (
@@ -96,6 +97,15 @@ export const UIComponentsPage = () => {
             icon={HelpIcon}
             label="Help button"
           />
+        </div>
+      </section>
+      <br />
+      <section>
+        <h2>Small Components</h2>
+        <br />
+        <div className="components">
+          <h3>HeaderSearch</h3>
+          <HeaderSearch />
         </div>
       </section>
       <br />

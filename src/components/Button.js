@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 export function Button({
+  type = 'button',
   className = 'btn',
   disabled = false,
   text,
@@ -20,6 +21,7 @@ export function Button({
         </NavLink>
       ) : (
         <button
+          type={type}
           className={className}
           onClick={onClick}
           aria-label={label}

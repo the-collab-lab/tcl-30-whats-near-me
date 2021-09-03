@@ -1,19 +1,24 @@
-import { useContext, useState } from 'react';
+import { ReactComponent as SearchPlaceIcon } from '../assets/search-place-icon.svg';
+import { useContext } from 'react';
 import { GoogleMapsContext } from '../context/GoogleMapsContext';
 import { MapCenterContext } from '../context/MapCenterContext';
-import planetSearch from '../assets/search-location-solid.svg';
+import { Button } from './Button';
 
 export const SearchForm = () => {
-  const [query, setQuery] = useState('');
   const valueGoogleMapsAPI = useContext(GoogleMapsContext);
   const valueMapCenter = useContext(MapCenterContext);
-  const { map, maps } = valueGoogleMapsAPI;
+  const { map, maps, query, setQuery } = valueGoogleMapsAPI;
   const { setNewCenterMap } = valueMapCenter;
 
   const handleQuery = (e) => setQuery(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (maps === null) {
+      alert('Google Maps is not loaded yet. Please, try again, later.');
+      return false;
+    }
 
     const request = {
       query,
@@ -54,31 +59,26 @@ export const SearchForm = () => {
 
   return (
     <>
-      {maps !== null ? (
-        <form onSubmit={handleSubmit} className="search">
-          <label htmlFor="query" className="search__label">
-            Place or address:
-          </label>
-          <input
-            className="search__input"
-            type="search"
-            id="query"
-            name="query"
-            value={query}
-            onChange={handleQuery}
-            placeholder="Search place name or address"
-            maxLength="40"
-            required
-          />
-          <button type="submit" className="search__button">
-            <img
-              src={planetSearch}
-              alt="search icon"
-              className="search__icon"
-            />
-          </button>
-        </form>
-      ) : null}
+      <form onSubmit={handleSubmit} className="search">
+        <input
+          className="search__input"
+          type="search"
+          id="query"
+          name="query"
+          value={query}
+          onChange={handleQuery}
+          placeholder="Search for a place or address"
+          maxLength="40"
+          aria-label="Place or address"
+          required
+        />
+        <Button
+          type="submit"
+          className="btn btn__icon"
+          label="Search place"
+          icon={SearchPlaceIcon}
+        />
+      </form>
     </>
   );
 };
