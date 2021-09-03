@@ -696,6 +696,7 @@ nav {
   display: block;
   border-radius: 1rem;
   object-fit: cover;
+  height: var(--height-image-location-medium);
   width: var(--height-location-card);
   padding: 0.5rem;
 }
