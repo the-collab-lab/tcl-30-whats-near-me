@@ -356,6 +356,11 @@ a.active {
   flex-direction: column;
 }
 
+.dialog__distance {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .dialog__header {
   display: flex;
   justify-content: flex-end;
