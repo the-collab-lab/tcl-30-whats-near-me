@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 
 import ReactSlider from 'react-slider';
+import { HeaderNav } from '../components/HeaderNav';
 
 import { LocationsContext } from '../context/LocationsContext';
 import { MapCenterContext } from '../context/MapCenterContext';
 
-const Settings = () => {
+export const SettingsPage = () => {
   const { wait, setWait } = useContext(LocationsContext);
   const { userLocationShared } = useContext(MapCenterContext);
 
@@ -15,14 +16,15 @@ const Settings = () => {
 
   return (
     <>
-      <div>
-        <h1>Settings </h1>
+      <HeaderNav />
+      <div className="view__content">
+        <h1>Settings</h1>
         <p className="settings-subheader">
           {userLocationShared
             ? `Adjust how frequently the app
-          refreshes with new data`
+            refreshes with new data`
             : `Please share your location to adjust how frequently the app
-          refreshes with new data`}
+            refreshes with new data`}
         </p>
       </div>
       {userLocationShared ? (
@@ -59,5 +61,3 @@ const Settings = () => {
     </>
   );
 };
-
-export default Settings;

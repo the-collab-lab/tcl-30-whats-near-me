@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { LocationsContext } from '../context/LocationsContext';
 import { sortLocationsByDistance } from '../helpers/helpersAPI';
 import { LocationList } from '../components/LocationList';
-import { SearchForm } from '../components/SearchForm';
 import Spinner from '../components/Spinner';
 import ErrorMessage from '../components/ErrorMessage';
+import { HeaderSearch } from '../components/HeaderSearch';
 
 const ListPage = () => {
   const valueLocations = useContext(LocationsContext);
@@ -13,10 +13,7 @@ const ListPage = () => {
 
   return (
     <>
-      <header className="view__header">
-        <h1 className="list__title">List</h1>
-        <SearchForm />
-      </header>
+      <HeaderSearch />
       <div className="view__content">
         {status === 'loading' ? <Spinner /> : null}
         {status === 'error' ? <ErrorMessage error={error} /> : null}
