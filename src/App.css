@@ -59,7 +59,6 @@ picture {
   display: block;
 }
 
-button,
 input,
 select,
 textarea {
@@ -144,13 +143,11 @@ main > h1 + * {
   height: 100%;
 }
 
-footer {
+footer .btn-container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
   text-align: center;
 }
 
@@ -174,23 +171,21 @@ nav {
 }
 
 .nav a {
-  color: #1c2334;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.8;
   cursor: pointer;
   text-decoration: none;
 }
 
 .btn {
-  font-family: var(--font-family-body-text);
+  font-family: var(--font-family-headings);
   background-color: white;
   color: var(--primary-color);
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+  font-weight: 700;
   gap: 1.5rem;
   line-height: 2;
   transition: all 200ms linear;
-  border-radius: 4px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -234,12 +229,6 @@ a.active {
   letter-spacing: 1px;
   height: var(--icon-height);
   width: var(--icon-height);
-}
-
-.btn-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
 }
 
 .btn-container {
