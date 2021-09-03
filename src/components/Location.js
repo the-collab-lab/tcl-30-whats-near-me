@@ -1,4 +1,7 @@
 import defaultLocationImg from '../assets/default-location.svg';
+import { ReactComponent as MapMarkerIcon } from '../assets/map-marker-icon.svg';
+import { ReactComponent as InfoIcon } from '../assets/info-icon.svg';
+import { Button } from './Button';
 
 export const Location = ({ location }) => {
   const { pageid, title, description, thumbnail, coordinates } = location;
@@ -8,25 +11,26 @@ export const Location = ({ location }) => {
 
   return (
     <li className="location">
-      <div className="location__info">
-        <figure className="location__cover">
-          <img className="location__image" src={imgSrc} alt={title} />
-          <figcaption className="location__figcaption">{dist} Km.</figcaption>
-        </figure>
-        <div className="location__location">
-          <h2 className="location__title">{title}</h2>
-          <p className="location__description">{description}</p>
-        </div>
-        <div className="location__actions">
-          <a
-            href={`https://en.wikipedia.org/?curid=${pageid}`}
-            className="location__link"
-            aria-label={`Read more about ${title}`}
-          >
-            <i className="fas fa-info-circle"></i>
-          </a>
+      <figure className="location__cover">
+        <img className="location__image" src={imgSrc} alt={title} />
+      </figure>
+      <div className="location__details">
+        <h2 className="location__title">{title}</h2>
+        <p className="location__description">{description}</p>
+        <div className="location__info">
+          <span className="location__distance">
+            <MapMarkerIcon />
+            <p className="location__value">{dist} Km.</p>
+          </span>
         </div>
       </div>
+      <Button
+        href={`https://en.wikipedia.org/?curid=${pageid}`}
+        className="btn btn__link--icon location__link"
+        icon={InfoIcon}
+        label="Info button"
+        isLinkExternal={true}
+      />
     </li>
   );
 };

@@ -4,6 +4,7 @@ export function Button({
   type = 'button',
   className = 'btn',
   disabled = false,
+  isLinkExternal = false,
   text,
   href,
   onClick,
@@ -15,10 +16,17 @@ export function Button({
   return (
     <>
       {href ? (
-        <NavLink exact to={href} className={className} aria-label={label}>
-          <ButtonIcon />
-          {text ? <span className="btn__text">{text}</span> : null}
-        </NavLink>
+        isLinkExternal ? (
+          <a href={href} className={className} aria-label={label}>
+            <ButtonIcon />
+            {text ? <span className="btn__text">{text}</span> : null}
+          </a>
+        ) : (
+          <NavLink exact to={href} className={className} aria-label={label}>
+            <ButtonIcon />
+            {text ? <span className="btn__text">{text}</span> : null}
+          </NavLink>
+        )
       ) : (
         <button
           type={type}

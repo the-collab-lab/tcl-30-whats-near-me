@@ -10,6 +10,8 @@ import { ReactComponent as ShareLocationIcon } from '../assets/share-location-ic
 import { ReactComponent as UserLocationIcon } from '../assets/user-location-icon.svg';
 import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
 import { ReactComponent as HelpIcon } from '../assets/help-icon.svg';
+import { ReactComponent as MapMarkerIcon } from '../assets/map-marker-icon.svg';
+import { ReactComponent as InfoIcon } from '../assets/info-icon.svg';
 import { Button } from '../components/Button';
 import { HeaderSearch } from '../components/HeaderSearch';
 
@@ -33,6 +35,8 @@ export const UIComponentsPage = () => {
           <UserLocationIcon />
           <SettingsIcon />
           <HelpIcon />
+          <MapMarkerIcon />
+          <InfoIcon />
         </div>
       </section>
       <br />
@@ -64,6 +68,12 @@ export const UIComponentsPage = () => {
             icon={CloseIcon}
             onClick={() => alert('Close')}
           />
+          <Button
+            className="btn btn__icon"
+            label="Info"
+            icon={InfoIcon}
+            onClick={() => alert('Info')}
+          />
         </div>
       </section>
       <br />
@@ -71,61 +81,76 @@ export const UIComponentsPage = () => {
         <h2>NavLinks (as Buttons)</h2>
         <br />
         <div className="icons">
-          <Button
-            href="/"
-            text="Map"
-            className="btn btn__link"
-            icon={MapIcon}
-            label="Map button"
-          />
-          <Button
-            href="/list"
-            text="List"
-            className="btn btn__link"
-            icon={ListIcon}
-            label="List button"
-          />
-          <Button
-            href="/settings"
-            className="btn btn__link--icon"
-            icon={SettingsIcon}
-            label="Settings button"
-          />
-          <Button
-            href="/help"
-            className="btn btn__link--icon"
-            icon={HelpIcon}
-            label="Help button"
-          />
-        </div>
-        <br />
-        <div className="icons">
-          <Button
-            href="/"
-            text="Map"
-            className="btn btn__link active"
-            icon={MapIcon}
-            label="Map button"
-          />
-          <Button
-            href="/list"
-            text="List"
-            className="btn btn__link active"
-            icon={ListIcon}
-            label="List button"
-          />
-          <Button
-            href="/settings"
-            className="btn btn__link--icon active"
-            icon={SettingsIcon}
-            label="Settings button"
-          />
-          <Button
-            href="/help"
-            className="btn btn__link--icon active"
-            icon={HelpIcon}
-            label="Help button"
-          />
+          <div className="icons">
+            <Button
+              href="/"
+              text="Map"
+              className="btn btn__link"
+              icon={MapIcon}
+              label="Map button"
+            />
+            <Button
+              href="/list"
+              text="List"
+              className="btn btn__link"
+              icon={ListIcon}
+              label="List button"
+            />
+            <Button
+              href="/settings"
+              className="btn btn__link--icon"
+              icon={SettingsIcon}
+              label="Settings button"
+            />
+            <Button
+              href="/help"
+              className="btn btn__link--icon"
+              icon={HelpIcon}
+              label="Help button"
+            />
+          </div>
+          <br />
+          <div className="icons">
+            <Button
+              href="/"
+              text="Map"
+              className="btn btn__link active"
+              icon={MapIcon}
+              label="Map button"
+            />
+            <Button
+              href="/list"
+              text="List"
+              className="btn btn__link active"
+              icon={ListIcon}
+              label="List button"
+            />
+            <Button
+              href="/ui"
+              text="Info"
+              className="btn btn__link active"
+              icon={InfoIcon}
+              label="Info button"
+            />
+            <Button
+              href="/settings"
+              className="btn btn__link--icon active"
+              icon={SettingsIcon}
+              label="Settings button"
+            />
+            <Button
+              href="/help"
+              className="btn btn__link--icon active"
+              icon={HelpIcon}
+              label="Help button"
+            />
+            <Button
+              href="/ui"
+              className="btn btn__link--icon active"
+              icon={InfoIcon}
+              label="Info button"
+            />
+          </div>
         </div>
       </section>
       <br />
