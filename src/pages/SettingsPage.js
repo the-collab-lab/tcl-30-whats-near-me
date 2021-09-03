@@ -34,8 +34,10 @@ export const SettingsPage = () => {
               </p>
             </div>
           ) : (
-            `Please share your location to adjust how frequently the app
-            refreshes with new data`
+            <p className="settings__message">
+              Please share your location to adjust how frequently the app
+              refreshes with new data
+            </p>
           )}
         </div>
 

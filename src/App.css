@@ -427,6 +427,13 @@ a.active {
   text-align: justify;
 }
 
+.settings__message {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .slider-container {
   display: flex;
   flex-direction: column;
