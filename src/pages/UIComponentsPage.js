@@ -97,7 +97,9 @@ export const UIComponentsPage = () => {
             icon={HelpIcon}
             label="Help button"
           />
-          <br />
+        </div>
+        <br />
+        <div className="icons">
           <Button
             href="/"
             text="Map"
