@@ -17,4 +17,36 @@ const sortLocationsByDistance = (locations = []) => {
   });
 };
 
-export { getLocationsFromResponseAPI, sortLocationsByDistance };
+const MEASUREMENTS = {
+  METER: 'm',
+  KILOMETERS: 'km',
+  MILES: 'miles',
+};
+
+const convertDistanceMts = (distanceInMts = 0, measurement = 'miles') => {
+  let result = distanceInMts;
+
+  switch (measurement) {
+    case MEASUREMENTS.METERS:
+      result = distanceInMts;
+      break;
+    case MEASUREMENTS.KILOMETERS:
+      result = distanceInMts / 1000;
+      break;
+    case MEASUREMENTS.MILES:
+      result = distanceInMts * 0.000621371;
+      break;
+    default:
+      result = distanceInMts;
+      break;
+  }
+
+  return result.toFixed(2);
+};
+
+export {
+  getLocationsFromResponseAPI,
+  sortLocationsByDistance,
+  MEASUREMENTS,
+  convertDistanceMts,
+};
