@@ -5,6 +5,8 @@ import '@reach/dialog/styles.css';
 import Pin from './Pin';
 import UserLocationPin from './UserLocationPin';
 import DialogBody from './DialogBody';
+import { ReactComponent as CloseIcon } from '../assets/close-icon.svg';
+import { Button } from './Button';
 import { MapCenterContext } from '../context/MapCenterContext';
 import { GoogleMapsContext } from '../context/GoogleMapsContext';
 
@@ -88,7 +90,15 @@ export const Map = ({
           aria-label="Location details"
           onDismiss={handleClose}
         >
-          <DialogBody onClick={handleClose} locationDetails={locationDetails} />
+          <div className="dialog__header">
+            <Button
+              className="btn btn__icon dialog__button dialog__button--close"
+              label="Close"
+              icon={CloseIcon}
+              onClick={handleClose}
+            />
+          </div>
+          <DialogBody locationDetails={locationDetails} />
         </Dialog>
       ) : null}
     </div>
