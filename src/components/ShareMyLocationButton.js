@@ -31,10 +31,6 @@ const ShareMyLocationButton = () => {
   };
   const handleError = () => setUserCenterMap(defaultCenterMap);
 
-  const buttonText = userLocationShared
-    ? 'Stop Sharing Location'
-    : 'Share My Location';
-
   const handleShareLiveLocation = () => {
     if (navigator.geolocation) {
       const trackingId = navigator.geolocation.watchPosition(
