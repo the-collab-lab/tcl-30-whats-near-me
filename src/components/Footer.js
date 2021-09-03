@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
-
 import { MapCenterContext } from '../context/MapCenterContext';
-
 import Nav from './Nav';
 import ShareMyLocationButton from './ShareMyLocationButton';
 import FlyToMeButton from './FlyToMeButton';
