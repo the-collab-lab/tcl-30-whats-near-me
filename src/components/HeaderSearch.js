@@ -28,20 +28,24 @@ export const HeaderSearch = ({ children }) => {
           icon={showSearchForm ? CloseIcon : SearchPlaceIcon}
           onClick={handleShowSearchForm}
         />
-        <Button
-          href="/settings"
-          className="btn btn__link--icon"
-          icon={SettingsIcon}
-          label="Settings button"
-        />
-        <Button
-          href="/help"
-          className="btn btn__link--icon"
-          icon={HelpIcon}
-          label="Help button"
-        />
-        {children}
+        {!showSearchForm ? (
+          <>
+            <Button
+              href="/settings"
+              className="btn btn__link--icon"
+              icon={SettingsIcon}
+              label="Settings button"
+            />
+            <Button
+              href="/help"
+              className="btn btn__link--icon"
+              icon={HelpIcon}
+              label="Help button"
+            />
+          </>
+        ) : null}
       </div>
+      {children}
     </header>
   );
 };
