@@ -16,9 +16,11 @@
   --btn-icon-width: var(--btn-height);
   --btn-link-width: 8.5rem;
   --height-location-card: 8rem;
-  --height-image-location: var(--height-location-card);
-  --width-location-title-small: 14rem;
+  --height-image-location-small: 4rem;
+  --height-image-location-medium: 6rem;
+  --width-location-title-small: 10rem;
   --width-location-title-medium: 20rem;
+  --width-location-title-large: 23rem;
 }
 
 /*--------------------------------------------------------------------------*\
@@ -543,6 +545,7 @@ a.active .icon {
 .icons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Footer */
@@ -631,6 +634,7 @@ nav {
   gap: 0.5rem;
   height: var(--height-location-card);
   padding: 0 0.5rem;
+  position: relative;
 }
 
 .location:hover {
@@ -649,11 +653,15 @@ nav {
 }
 
 .location__cover {
-  height: var(--height-location-card);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .location__description {
   font-family: var(--font-family-headings);
+  font-size: 0.95rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -663,7 +671,6 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5rem;
 }
 
 .location__distance {
@@ -674,7 +681,6 @@ nav {
 .location__image {
   display: block;
   border-radius: 1rem;
-  height: var(--height-location-card);
   object-fit: cover;
   width: var(--height-location-card);
   padding: 0.5rem;
@@ -687,7 +693,26 @@ nav {
 }
 
 .location__link {
-  color: var(--secondary-color);
+  color: var(--primary-color);
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.location__link:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.location:hover .icon {
+  fill: var(--primary-color);
+}
+
+.location:hover .location__distance .icon {
+  fill: var(--accent-color);
+}
+
+.location__link:hover .icon {
+  fill: var(--accent-color);
 }
 
 .location__title {
@@ -700,7 +725,7 @@ nav {
   text-overflow: ellipsis;
 }
 
-@media screen and (min-width: 468px) {
+@media screen and (min-width: 650px) {
   .location {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -710,6 +735,24 @@ nav {
   .location__description,
   .location__title {
     width: var(--width-location-title-medium);
+  }
+
+  .location__image {
+    height: var(--height-image-location-medium);
+    width: var(--height-image-location-medium);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .location {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 0.5rem;
+  }
+
+  .location__description,
+  .location__title {
+    width: var(--width-location-title-large);
   }
 }
 
