@@ -656,6 +656,10 @@ a.active {
   fill: var(--primary-color);
 }
 
+a.active .icon {
+  fill: var(--accent-color);
+}
+
 .icon:hover {
   fill: var(--secondary-color);
 }
