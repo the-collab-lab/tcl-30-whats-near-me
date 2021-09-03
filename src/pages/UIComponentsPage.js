@@ -11,6 +11,7 @@ import { ReactComponent as UserLocationIcon } from '../assets/user-location-icon
 import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
 import { ReactComponent as HelpIcon } from '../assets/help-icon.svg';
 import { ReactComponent as MapMarkerIcon } from '../assets/map-marker-icon.svg';
+import { ReactComponent as InfoIcon } from '../assets/info-icon.svg';
 import { Button } from '../components/Button';
 import { HeaderSearch } from '../components/HeaderSearch';
 
@@ -35,6 +36,7 @@ export const UIComponentsPage = () => {
           <SettingsIcon />
           <HelpIcon />
           <MapMarkerIcon />
+          <InfoIcon />
         </div>
       </section>
       <br />
@@ -65,6 +67,12 @@ export const UIComponentsPage = () => {
             label="Close"
             icon={CloseIcon}
             onClick={() => alert('Close')}
+          />
+          <Button
+            className="btn btn__icon"
+            label="Info"
+            icon={InfoIcon}
+            onClick={() => alert('Info')}
           />
         </div>
       </section>
@@ -125,6 +133,12 @@ export const UIComponentsPage = () => {
             className="btn btn__link--icon active"
             icon={HelpIcon}
             label="Help button"
+          />
+          <Button
+            href="/ui"
+            className="btn btn__link--icon active"
+            icon={InfoIcon}
+            label="Info button"
           />
         </div>
       </section>
