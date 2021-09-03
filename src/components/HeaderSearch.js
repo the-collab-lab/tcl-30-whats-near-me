@@ -1,11 +1,10 @@
 import { ReactComponent as SearchPlaceIcon } from '../assets/search-place-icon.svg';
-import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
-import { ReactComponent as HelpIcon } from '../assets/help-icon.svg';
 import { ReactComponent as CloseIcon } from '../assets/close-icon.svg';
 import { Button } from './Button';
 import { SearchForm } from './SearchForm';
 import { useContext, useState } from 'react';
 import { GoogleMapsContext } from '../context/GoogleMapsContext';
+import { HeaderNav } from './HeaderNav';
 
 export const HeaderSearch = ({ children }) => {
   const [showSearchForm, setShowSearchForm] = useState(false);
@@ -28,22 +27,7 @@ export const HeaderSearch = ({ children }) => {
           icon={showSearchForm ? CloseIcon : SearchPlaceIcon}
           onClick={handleShowSearchForm}
         />
-        {!showSearchForm ? (
-          <>
-            <Button
-              href="/settings"
-              className="btn btn__link--icon"
-              icon={SettingsIcon}
-              label="Settings button"
-            />
-            <Button
-              href="/help"
-              className="btn btn__link--icon"
-              icon={HelpIcon}
-              label="Help button"
-            />
-          </>
-        ) : null}
+        {!showSearchForm ? <HeaderNav /> : null}
       </div>
       {children}
     </header>
