@@ -1,4 +1,5 @@
 import { Button } from './Button';
+import { ReactComponent as MapMarkerIcon } from '../assets/map-marker-icon.svg';
 import { ReactComponent as InfoIcon } from '../assets/info-icon.svg';
 
 const DialogBody = ({ locationDetails }) => (
@@ -15,7 +16,10 @@ const DialogBody = ({ locationDetails }) => (
       <h2 className="dialog__name">{locationDetails.title}</h2>
       <p className="dialog__description">{locationDetails.description}</p>
       <p className="dialog__distance">
-        Distance: {locationDetails.coordinates[0].dist} km
+        <MapMarkerIcon />
+        <p className="location__value">
+          {locationDetails.coordinates[0].dist} Km.
+        </p>
       </p>
     </div>
     <Button
