@@ -574,7 +574,7 @@ a.active {
   background-color: white;
   border-radius: 0.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.5rem;
   height: 2.5rem;
   padding: 0 0.5rem;
@@ -596,15 +596,19 @@ a.active {
   background-color: transparent;
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0 0.1rem 0.1rem 0 #ccc;
+  box-shadow: 0.2rem 0.2rem 0 0 var(--shadows-color);
   height: var(--btn-height);
   outline: none;
   padding: 0.5rem;
-  width: 90%;
+  width: 100%;
 }
 
 .search__input::placeholder {
   color: rgba(168, 168, 168, 0.5);
+}
+
+.search__input::-webkit-search-cancel-button {
+  cursor: pointer;
 }
 
 .search__label {
@@ -709,5 +713,4 @@ nav {
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
-  padding: 0 0.5rem;
 }
