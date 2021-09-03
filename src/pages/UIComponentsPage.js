@@ -10,6 +10,7 @@ import { ReactComponent as ShareLocationIcon } from '../assets/share-location-ic
 import { ReactComponent as UserLocationIcon } from '../assets/user-location-icon.svg';
 import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
 import { ReactComponent as HelpIcon } from '../assets/help-icon.svg';
+import { ReactComponent as MapMarkerIcon } from '../assets/map-marker-icon.svg';
 import { Button } from '../components/Button';
 import { HeaderSearch } from '../components/HeaderSearch';
 
@@ -33,6 +34,7 @@ export const UIComponentsPage = () => {
           <UserLocationIcon />
           <SettingsIcon />
           <HelpIcon />
+          <MapMarkerIcon />
         </div>
       </section>
       <br />
