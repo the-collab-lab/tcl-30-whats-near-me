@@ -97,6 +97,33 @@ export const UIComponentsPage = () => {
             icon={HelpIcon}
             label="Help button"
           />
+          <br />
+          <Button
+            href="/"
+            text="Map"
+            className="btn btn__link active"
+            icon={MapIcon}
+            label="Map button"
+          />
+          <Button
+            href="/list"
+            text="List"
+            className="btn btn__link active"
+            icon={ListIcon}
+            label="List button"
+          />
+          <Button
+            href="/settings"
+            className="btn btn__link--icon active"
+            icon={SettingsIcon}
+            label="Settings button"
+          />
+          <Button
+            href="/help"
+            className="btn btn__link--icon active"
+            icon={HelpIcon}
+            label="Help button"
+          />
         </div>
       </section>
       <br />

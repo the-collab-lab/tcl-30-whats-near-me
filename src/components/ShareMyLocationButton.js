@@ -1,5 +1,7 @@
 import { useContext, useRef } from 'react';
 import { MapCenterContext } from '../context/MapCenterContext';
+import { Button } from '../components/Button';
+import { ReactComponent as ShareLocationIcon } from '../assets/share-location-icon.svg';
 
 const ShareMyLocationButton = () => {
   const valueCenterMap = useContext(MapCenterContext);
@@ -29,10 +31,6 @@ const ShareMyLocationButton = () => {
   };
   const handleError = () => setUserCenterMap(defaultCenterMap);
 
-  const buttonText = userLocationShared
-    ? 'Stop Sharing Location'
-    : 'Share My Location';
-
   const handleShareLiveLocation = () => {
     if (navigator.geolocation) {
       const trackingId = navigator.geolocation.watchPosition(
@@ -54,11 +52,12 @@ const ShareMyLocationButton = () => {
   };
 
   return (
-    <button
+    <Button
+      className="btn btn__icon"
+      label="Share location"
+      icon={ShareLocationIcon}
       onClick={userLocationShared ? handleStopSharing : handleShareLiveLocation}
-    >
-      {buttonText}
-    </button>
+    />
   );
 };
 
