@@ -636,6 +636,7 @@ a.active .icon {
 .icons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Footer */
@@ -701,4 +702,12 @@ nav {
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
+}
+
+.header__nav {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 0 0.5rem;
 }
