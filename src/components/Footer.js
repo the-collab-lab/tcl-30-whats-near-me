@@ -9,11 +9,11 @@ const Footer = () => {
 
   return (
     <footer>
-      <Nav />
       <div className="btn-container">
         <ShareMyLocationButton />
         <FlyToMeButton disabled={!userLocationShared} />
       </div>
+      <Nav />
     </footer>
   );
 };
