@@ -9,6 +9,7 @@ import { ReactComponent as CloseIcon } from '../assets/close-icon.svg';
 import { Button } from './Button';
 import { MapCenterContext } from '../context/MapCenterContext';
 import { GoogleMapsContext } from '../context/GoogleMapsContext';
+import { MEASUREMENTS } from '../helpers/helpersAPI';
 
 export const Map = ({
   defaultCenterMap,
@@ -98,7 +99,10 @@ export const Map = ({
               onClick={handleClose}
             />
           </div>
-          <DialogBody locationDetails={locationDetails} />
+          <DialogBody
+            locationDetails={locationDetails}
+            measurement={MEASUREMENTS.METER}
+          />
         </Dialog>
       ) : null}
     </div>
