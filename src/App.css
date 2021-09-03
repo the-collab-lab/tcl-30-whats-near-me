@@ -205,8 +205,8 @@ a.active {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.5rem;
+  right: 1.1rem;
 }
 
 .spinner {
@@ -691,11 +691,14 @@ nav {
 .header {
   align-items: center;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr minmax(min-content, 2rem);
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .header__column {
   align-items: center;
   display: flex;
   gap: 0.5rem;
+  justify-content: flex-end;
 }
