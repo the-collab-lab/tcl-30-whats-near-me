@@ -575,9 +575,10 @@ a.active {
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
+  gap: 0.5rem;
   height: 2.5rem;
   padding: 0 0.5rem;
-  position: relative;
+  width: 100%;
 }
 
 .search__button {
@@ -594,8 +595,16 @@ a.active {
 .search__input {
   background-color: transparent;
   border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.1rem 0.1rem 0 #ccc;
+  height: var(--btn-height);
   outline: none;
-  width: 100%;
+  padding: 0.5rem;
+  width: 90%;
+}
+
+.search__input::placeholder {
+  color: rgba(168, 168, 168, 0.5);
 }
 
 .search__label {
@@ -676,4 +685,17 @@ nav {
     margin: 0;
     padding: 0;
   }
+}
+
+/* Header */
+.header {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.header__column {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
 }
