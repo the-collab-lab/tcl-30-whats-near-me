@@ -149,6 +149,7 @@ footer .btn-container {
   justify-content: flex-end;
   gap: 1rem;
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 nav {
