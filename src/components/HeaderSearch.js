@@ -10,6 +10,7 @@ export const HeaderSearch = ({ children }) => {
   const [showSearchForm, setShowSearchForm] = useState(false);
   const valueGoogleMapsAPI = useContext(GoogleMapsContext);
   const { setQuery } = valueGoogleMapsAPI;
+  const showHeaderNav = !showSearchForm;
   const handleShowSearchForm = () => {
     setShowSearchForm(!showSearchForm);
     setQuery('');
@@ -27,7 +28,7 @@ export const HeaderSearch = ({ children }) => {
           icon={showSearchForm ? CloseIcon : SearchPlaceIcon}
           onClick={handleShowSearchForm}
         />
-        {!showSearchForm ? <HeaderNav /> : null}
+        {showHeaderNav ? <HeaderNav /> : null}
       </div>
       {children}
     </header>
