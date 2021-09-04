@@ -2,6 +2,8 @@ import { HeaderNav } from '../components/HeaderNav';
 import { ReactComponent as ShareLocationIcon } from '../assets/share-location-icon.svg';
 import { ReactComponent as SearchPlaceIcon } from '../assets/search-place-icon.svg';
 import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
+import { ReactComponent as AppleIcon } from '../assets/apple-icon.svg';
+import { ReactComponent as AndroidIcon } from '../assets/android-icon.svg';
 import { Button } from '../components/Button';
 
 export const HelpPage = () => {
@@ -16,6 +18,21 @@ export const HelpPage = () => {
             It's an application to help you to find places around you and you
             can share your location and discover new places.
           </p>
+        </section>
+        <section className="help__section">
+          <h2 className="help__subtitle">Installation</h2>
+          <div className="help__buttons">
+            <Button
+              className="btn btn__icon active"
+              label="iOS installation"
+              icon={AppleIcon}
+            />
+            <Button
+              className="btn btn__icon active"
+              label="Android installation"
+              icon={AndroidIcon}
+            />
+          </div>
         </section>
         <section className="help__section">
           <h2 className="help__subtitle">Features</h2>
