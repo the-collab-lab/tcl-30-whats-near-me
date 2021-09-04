@@ -58,42 +58,6 @@ export const HelpPage = () => {
               onClick={showAndroidVideo}
             />
           </div>
-          <div className="instructions">
-            <h3>iOS Instructions</h3>
-            <ul>
-              <li>
-                1. Navigate to the app via Safari. Note that Chrome will not
-                work on iOS devices at this time for this process.
-              </li>
-              <br />
-              <li>2. Click the "Share" icon.</li>
-              <br />
-              <li>3. Scroll down to and select "Add to Home Screen".</li>
-              <br />
-              <li>4. Click "Add" in the upper right corner.</li>
-              <br />
-              <li>
-                5. You will now find "What's Near Me?" on the home screen of
-                your device!
-              </li>
-            </ul>
-          </div>
-          <div className="instructions">
-            <h3>Android Instructions</h3>
-            <ul>
-              <li>1. Open Google Chrome</li>
-              <br />
-              <li>2. Settings</li>
-              <br />
-              <li>3. Click on 'Add home screen'</li>
-              <br />
-              <li>4. Accept to add your PWA in your phone</li>
-              <br />
-              <li>5. Close browser</li>
-              <br />
-              <li>6. Open "What's Near Me?" app</li>
-            </ul>
-          </div>
         </section>
         <section className="help__section">
           <h2 className="help__subtitle">Features</h2>
@@ -154,7 +118,26 @@ export const HelpPage = () => {
                   primaryColor="#264653"
                   poster="https://res.cloudinary.com/images-alex-projects/image/upload/v1630728009/videos/tcl-30/cover-video_gpn5et.png"
                 />
-                <performance>Android</performance>
+                <div className="instructions">
+                  <h3>iOS Instructions</h3>
+                  <ul>
+                    <li>
+                      1. Navigate to the app via Safari. Note that Chrome will
+                      not work on iOS devices at this time for this process.
+                    </li>
+                    <br />
+                    <li>2. Click the "Share" icon.</li>
+                    <br />
+                    <li>3. Scroll down to and select "Add to Home Screen".</li>
+                    <br />
+                    <li>4. Click "Add" in the upper right corner.</li>
+                    <br />
+                    <li>
+                      5. You will now find "What's Near Me?" on the home screen
+                      of your device!
+                    </li>
+                  </ul>
+                </div>
               </>
             ) : (
               <>
@@ -164,7 +147,22 @@ export const HelpPage = () => {
                   primaryColor="#264653"
                   poster="https://res.cloudinary.com/images-alex-projects/image/upload/v1630728009/videos/tcl-30/cover-video_gpn5et.png"
                 />
-                <p>Android</p>
+                <div className="instructions">
+                  <h3>Android Instructions</h3>
+                  <ul>
+                    <li>1. Open Google Chrome</li>
+                    <br />
+                    <li>2. Settings</li>
+                    <br />
+                    <li>3. Click on 'Add home screen'</li>
+                    <br />
+                    <li>4. Accept to add your PWA in your phone</li>
+                    <br />
+                    <li>5. Close browser</li>
+                    <br />
+                    <li>6. Open "What's Near Me?" app</li>
+                  </ul>
+                </div>
               </>
             )}
           </div>
