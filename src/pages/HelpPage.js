@@ -4,9 +4,30 @@ import { ReactComponent as SearchPlaceIcon } from '../assets/search-place-icon.s
 import { ReactComponent as SettingsIcon } from '../assets/settings-icon.svg';
 import { ReactComponent as AppleIcon } from '../assets/apple-icon.svg';
 import { ReactComponent as AndroidIcon } from '../assets/android-icon.svg';
+import { ReactComponent as CloseIcon } from '../assets/close-icon.svg';
 import { Button } from '../components/Button';
+import { useState } from 'react';
+import Dialog from '@reach/dialog';
+import { ReactVideo } from 'reactjs-media';
+
+const PLATFORMS = {
+  IOS: 'iOS',
+  ANDROID: 'Android',
+};
 
 export const HelpPage = () => {
+  const [platform, setPlatform] = useState(PLATFORMS.IOS);
+  const [showDialogVideo, setShowDialogVideo] = useState(false);
+  const handleClose = () => setShowDialogVideo(false);
+  const showIOSVideo = () => {
+    setPlatform('iOS');
+    setShowDialogVideo(true);
+  };
+  const showAndroidVideo = () => {
+    setPlatform('Android');
+    setShowDialogVideo(true);
+  };
+
   return (
     <>
       <HeaderNav />
@@ -26,11 +47,13 @@ export const HelpPage = () => {
               className="btn btn__icon active"
               label="iOS installation"
               icon={AppleIcon}
+              onClick={showIOSVideo}
             />
             <Button
               className="btn btn__icon active"
               label="Android installation"
               icon={AndroidIcon}
+              onClick={showAndroidVideo}
             />
           </div>
         </section>
@@ -68,6 +91,40 @@ export const HelpPage = () => {
           </ul>
         </section>
       </main>
+
+      {showDialogVideo ? (
+        <Dialog
+          className="dialog"
+          aria-label="Location details"
+          onDismiss={handleClose}
+        >
+          <div className="dialog__header">
+            <Button
+              className="btn btn__icon dialog__button dialog__button--close"
+              label="Close"
+              icon={CloseIcon}
+              onClick={handleClose}
+            />
+          </div>
+          <div className="help__video">
+            {platform === PLATFORMS.IOS ? (
+              <ReactVideo
+                src="https://res.cloudinary.com/images-alex-projects/video/upload/v1630726401/videos/tcl-30/ios_vxpcdb.mp4"
+                autoPlay
+                primaryColor="#264653"
+                poster="https://res.cloudinary.com/images-alex-projects/image/upload/v1630728009/videos/tcl-30/cover-video_gpn5et.png"
+              />
+            ) : (
+              <ReactVideo
+                src="https://res.cloudinary.com/images-alex-projects/video/upload/v1630729219/videos/tcl-30/android-video_mscqxp.mp4"
+                autoPlay
+                primaryColor="#264653"
+                poster="https://res.cloudinary.com/images-alex-projects/image/upload/v1630728009/videos/tcl-30/cover-video_gpn5et.png"
+              />
+            )}
+          </div>
+        </Dialog>
+      ) : null}
     </>
   );
 };
