@@ -100,7 +100,7 @@ body {
   margin: 0;
   line-height: 1.5;
   color: #1c2334;
-  font-family: Barlow Condensed, Helvetica, sans-serif;
+  font-family: var(--font-family-body-text);
 }
 
 .app {
@@ -469,7 +469,7 @@ a.active {
   top: 1px;
   width: 50px;
   height: 48px;
-  border: 5px solid black;
+  border: 5px solid var(--secondary-color);
   background-color: var(--primary-color);
   color: white;
   font-size: 0.9em;
