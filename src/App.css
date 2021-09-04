@@ -355,7 +355,7 @@ a.active {
     flex-direction: column;
     gap: 0.5rem;
     padding: 1.3rem;
-    height: var(--height-dialog-info-location-medium);
+    min-height: var(--height-dialog-info-location-medium);
     width: var(--width-dialog-info-location-medium);
   }
 }
