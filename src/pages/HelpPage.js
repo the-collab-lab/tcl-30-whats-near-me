@@ -13,10 +13,11 @@ export const HelpPage = () => {
       <main className="view__content">
         <h1 className="view__title">HELP</h1>
         <section className="help__section">
-          <h2 className="help__subtitle">What's near me?</h2>
+          <h2 className="help__subtitle">What's Near Me?</h2>
           <p className="help__description">
-            It's an application to help you to find places around you and you
-            can share your location and discover new places.
+            This is an application to help you to find places! You can also
+            choose to share your location and discover new places as you travel
+            around.
           </p>
         </section>
         <section className="help__section">
@@ -34,7 +35,7 @@ export const HelpPage = () => {
               icon={AndroidIcon}
             />
           </div>
-          <div className="instructions__ios">
+          <div className="instructions">
             <h3>iOS Instructions</h3>
             <ul>
               <li>
@@ -52,6 +53,22 @@ export const HelpPage = () => {
                 5. You will now find "What's Near Me?" on the home screen of
                 your device!
               </li>
+            </ul>
+          </div>
+          <div className="instructions">
+            <h3>Android Instructions</h3>
+            <ul>
+              <li>1. Open Google Chrome</li>
+              <br />
+              <li>2. Settings</li>
+              <br />
+              <li>3. Click on 'Add home screen'</li>
+              <br />
+              <li>4. Accept to add your PWA in your phone</li>
+              <br />
+              <li>5. Close browser</li>
+              <br />
+              <li>6. Open "What's Near Me?" app</li>
             </ul>
           </div>
         </section>
@@ -83,7 +100,8 @@ export const HelpPage = () => {
                 icon={SettingsIcon}
               />
               <span className="help__details">
-                Settings, adjust how frequency you can get new data.
+                Use settings to adjust how frequently your device refreshes with
+                new data.
               </span>
             </li>
           </ul>
