@@ -831,3 +831,8 @@ nav {
   display: flex;
   gap: 0.5rem;
 }
+
+.help__video {
+  min-height: 30rem;
+  width: 100%;
+}

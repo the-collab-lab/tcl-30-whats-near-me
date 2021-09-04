@@ -108,19 +108,25 @@ export const HelpPage = () => {
           </div>
           <div className="help__video">
             {platform === PLATFORMS.IOS ? (
-              <ReactVideo
-                src="https://res.cloudinary.com/images-alex-projects/video/upload/v1630726401/videos/tcl-30/ios_vxpcdb.mp4"
-                autoPlay
-                primaryColor="#264653"
-                poster="https://res.cloudinary.com/images-alex-projects/image/upload/v1630728009/videos/tcl-30/cover-video_gpn5et.png"
-              />
+              <>
+                <ReactVideo
+                  src="https://res.cloudinary.com/images-alex-projects/video/upload/v1630726401/videos/tcl-30/ios_vxpcdb.mp4"
+                  autoPlay
+                  primaryColor="#264653"
+                  poster="https://res.cloudinary.com/images-alex-projects/image/upload/v1630728009/videos/tcl-30/cover-video_gpn5et.png"
+                />
+                <performance>Android</performance>
+              </>
             ) : (
-              <ReactVideo
-                src="https://res.cloudinary.com/images-alex-projects/video/upload/v1630729219/videos/tcl-30/android-video_mscqxp.mp4"
-                autoPlay
-                primaryColor="#264653"
-                poster="https://res.cloudinary.com/images-alex-projects/image/upload/v1630728009/videos/tcl-30/cover-video_gpn5et.png"
-              />
+              <>
+                <ReactVideo
+                  src="https://res.cloudinary.com/images-alex-projects/video/upload/v1630729219/videos/tcl-30/android-video_mscqxp.mp4"
+                  autoPlay
+                  primaryColor="#264653"
+                  poster="https://res.cloudinary.com/images-alex-projects/image/upload/v1630728009/videos/tcl-30/cover-video_gpn5et.png"
+                />
+                <p>Android</p>
+              </>
             )}
           </div>
         </Dialog>

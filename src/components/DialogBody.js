@@ -19,12 +19,12 @@ const DialogBody = ({ locationDetails, measurement = MEASUREMENTS.METER }) => {
       <div className="dialog__details">
         <h2 className="dialog__name">{locationDetails.title}</h2>
         <p className="dialog__description">{locationDetails.description}</p>
-        <p className="dialog__distance">
+        <div className="dialog__distance">
           <MapMarkerIcon />
           <p className="location__value">
             {convertDistanceMts(dist, measurement)} {measurement}
           </p>
-        </p>
+        </div>
       </div>
       <Button
         href={`https://en.wikipedia.org/?curid=${locationDetails.pageid}`}
