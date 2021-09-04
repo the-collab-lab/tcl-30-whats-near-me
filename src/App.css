@@ -265,8 +265,9 @@ a.active {
   width: 24px;
   height: 24px;
   cursor: pointer;
-  border: 2px solid #1c2334;
-  background: grey;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background: rgb(179, 181, 182);
 }
 
 .map-icon svg {
@@ -307,7 +308,8 @@ a.active {
 .user-location-icon {
   width: 180px;
   height: 180px;
-  fill: #a020f0;
+  fill: var(--primary-color);
+
   animation: pulse 2s infinite;
   border-radius: 50%;
 }
@@ -315,7 +317,7 @@ a.active {
 @keyframes pulse {
   0% {
     transform: scale(0.95);
-    fill: rgba(142, 68, 173, 0.7);
+    fill: var(--secondary-color);
   }
 
   70% {
