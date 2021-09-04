@@ -809,6 +809,11 @@ nav {
   color: var(--primary-color);
 }
 
+.help__description,
+.help__details {
+  font-family: var(--font-family-body-text);
+}
+
 .help__features {
   display: flex;
   flex-direction: column;
