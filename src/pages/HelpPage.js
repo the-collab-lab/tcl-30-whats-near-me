@@ -27,11 +27,32 @@ export const HelpPage = () => {
               label="iOS installation"
               icon={AppleIcon}
             />
+
             <Button
               className="btn btn__icon active"
               label="Android installation"
               icon={AndroidIcon}
             />
+          </div>
+          <div className="instructions__ios">
+            <h3>iOS Instructions</h3>
+            <ul>
+              <li>
+                1. Navigate to the app via Safari. Note that Chrome will not
+                work on iOS devices at this time for this process.
+              </li>
+              <br />
+              <li>2. Click the "Share" icon.</li>
+              <br />
+              <li>3. Scroll down to and select "Add to Home Screen".</li>
+              <br />
+              <li>4. Click "Add" in the upper right corner.</li>
+              <br />
+              <li>
+                5. You will now find "What's Near Me?" on the home screen of
+                your device!
+              </li>
+            </ul>
           </div>
         </section>
         <section className="help__section">
