@@ -836,3 +836,7 @@ nav {
   min-height: 30rem;
   width: 100%;
 }
+
+.instructions {
+  margin-top: 2.5rem;
+}
