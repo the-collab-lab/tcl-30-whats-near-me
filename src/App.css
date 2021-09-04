@@ -643,6 +643,7 @@ nav {
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
+  margin-right: 0.5rem;
 }
 
 /* List & Locations */
@@ -819,4 +820,9 @@ nav {
   display: grid;
   grid-template-columns: var(--btn-icon-width) 2fr;
   gap: 1rem;
+}
+
+.help__buttons {
+  display: flex;
+  gap: 0.5rem;
 }
