@@ -1,48 +1,40 @@
-import React from 'react';
-import { convertDistanceMts } from '../helpers/helpersAPI';
+import { Button } from './Button';
+import { ReactComponent as MapMarkerIcon } from '../assets/map-marker-icon.svg';
+import { ReactComponent as InfoIcon } from '../assets/info-icon.svg';
+import { convertDistanceMts, MEASUREMENTS } from '../helpers/helpersAPI';
 
-import CloseIcon from './CloseIcon';
-
-const DialogBody = ({ locationDetails, onClick, measurement }) => {
-  const dist =
-    typeof locationDetails.coordinates[0] === 'undefined'
-      ? 0
-      : locationDetails.coordinates[0].dist;
+const DialogBody = ({ locationDetails, measurement = MEASUREMENTS.METER }) => {
+  const dist = locationDetails.coordinates[0].dist;
 
   return (
-    <>
-      <button
-        className="dialog__button"
-        aria-label="close dialog"
-        onClick={onClick}
-      >
-        <CloseIcon />
-      </button>
-
-      <div className="dialog__image">
-        <img
-          src={
-            locationDetails?.thumbnail?.source ||
-            `${process.env.PUBLIC_URL}/placeholder.png`
-          }
-          alt={locationDetails?.thumbnail?.source ? locationDetails.title : ''}
-        />
+    <div className="dialog__body">
+      <img
+        className="dialog__image"
+        src={
+          locationDetails?.thumbnail?.source ||
+          `${process.env.PUBLIC_URL}/placeholder.png`
+        }
+        alt={locationDetails?.thumbnail?.source ? locationDetails.title : ''}
+      />
+      <div className="dialog__details">
+        <h2 className="dialog__name">{locationDetails.title}</h2>
+        <p className="dialog__description">{locationDetails.description}</p>
+        <div className="dialog__distance">
+          <MapMarkerIcon />
+          <p className="location__value">
+            {convertDistanceMts(dist, measurement)} {measurement}
+          </p>
+        </div>
       </div>
-      <div className="dialog__body">
-        <h2>{locationDetails.title}</h2>
-        <p>{locationDetails.description}</p>
-        <p>
-          Distance: {convertDistanceMts(dist, measurement)} {measurement}
-        </p>
-        <a
-          className="dialog__body__link"
-          href={`https://en.wikipedia.org/?curid=${locationDetails.pageid}`}
-          aria-label={`Read more about ${locationDetails.title}`}
-        >
-          Learn More
-        </a>
-      </div>
-    </>
+      <Button
+        href={`https://en.wikipedia.org/?curid=${locationDetails.pageid}`}
+        className="btn btn__link dialog__link"
+        icon={InfoIcon}
+        label={`Read more about ${locationDetails.title}`}
+        isLinkExternal={true}
+        text="Learn more"
+      />
+    </div>
   );
 };
 

@@ -5,12 +5,13 @@ import GoogleMaps from './context/GoogleMapsContext';
 import MapCenter from './context/MapCenterContext';
 import Locations from './context/LocationsContext';
 import ListPage from './pages/ListPage';
-import Settings from './components/Settings';
-import Help from './components/Help';
 import Footer from './components/Footer';
 import MapPage from './pages/MapPage';
 
 import './App.css';
+import { UIComponentsPage } from './pages/UIComponentsPage';
+import { SettingsPage } from './pages/SettingsPage';
+import { HelpPage } from './pages/HelpPage';
 
 const App = () => {
   return (
@@ -23,8 +24,9 @@ const App = () => {
                 <Switch>
                   <Route path="/" exact component={MapPage} />
                   <Route path="/list" component={ListPage} />
-                  <Route path="/settings" component={Settings} />
-                  <Route path="/help" component={Help} />
+                  <Route path="/settings" component={SettingsPage} />
+                  <Route path="/help" component={HelpPage} />
+                  <Route path="/ui" component={UIComponentsPage} />
                 </Switch>
               </main>
               <Footer />
